@@ -1,0 +1,260 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module 05-Enum</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>05-Enum</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/git/pconc/modules/05-enum.py">d:\git\pconc\modules\05-enum.py</a></font></td></tr></table>
+    <p><tt>Projet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Editeur,&nbsp;Compilateur&nbsp;et&nbsp;Micro-Ordinateur&nbsp;pour<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;langage&nbsp;assembleur.<br>
+Nom&nbsp;du&nbsp;fichier&nbsp;&nbsp;:&nbsp;05-Enum.py<br>
+&nbsp;<br>
+Identification&nbsp;&nbsp;:&nbsp;05-Enum<br>
+Titre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Enum<br>
+Auteurs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Marc-André&nbsp;Jean<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;14-04-2017<br>
+Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Enum&nbsp;pour&nbsp;les&nbsp;<a href="#OPCODE">OPCODE</a>'s,&nbsp;<a href="#REGISTRE">REGISTRE</a>'s,&nbsp;<a href="#ADRESSAGE">ADRESSAGE</a>'s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et&nbsp;<a href="#MODE">MODE</a>'s.<br>
+&nbsp;<br>
+&nbsp;<br>
+Le&nbsp;module&nbsp;``Enum``<br>
+================================<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;contient&nbsp;une&nbsp;fonction&nbsp;pour&nbsp;créer&nbsp;des&nbsp;types&nbsp;Enum's.&nbsp;Ce<br>
+module&nbsp;contient&nbsp;aussi&nbsp;des&nbsp;énumérations&nbsp;pour&nbsp;les&nbsp;<a href="#OPCODE">OPCODE</a>'s,&nbsp;les<br>
+<a href="#REGISTRE">REGISTRE</a>'s&nbsp;et&nbsp;pour&nbsp;les&nbsp;<a href="#ADRESSAGE">ADRESSAGE</a>'s.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial">Enum
+</font></dt><dt><font face="helvetica, arial">Enum
+</font></dt><dt><font face="helvetica, arial">Enum
+</font></dt><dt><font face="helvetica, arial">Enum
+</font></dt><dt><font face="helvetica, arial">Enum
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>ADRESSAGE</strong> = <a name="ADRESSAGE">class Enum</a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>ADDR</strong> = 48</dl>
+
+<dl><dt><strong>ADDR_FROM_ADDR</strong> = 64</dl>
+
+<dl><dt><strong>ADDR_FROM_REG</strong> = 32</dl>
+
+<dl><dt><strong>ADDR_OF_REG</strong> = 16</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>MODE</strong> = <a name="MODE">class Enum</a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>END</strong> = 4</dl>
+
+<dl><dt><strong>HALT</strong> = 9</dl>
+
+<dl><dt><strong>INERTE</strong> = 0</dl>
+
+<dl><dt><strong>READ</strong> = 1</dl>
+
+<dl><dt><strong>RESET</strong> = 8</dl>
+
+<dl><dt><strong>WRITE</strong> = 2</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>OPCODE</strong> = <a name="OPCODE">class Enum</a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>ADD</strong> = 4352</dl>
+
+<dl><dt><strong>AND</strong> = 8704</dl>
+
+<dl><dt><strong>DIV</strong> = 5120</dl>
+
+<dl><dt><strong>DTA</strong> = 65535</dl>
+
+<dl><dt><strong>EQ</strong> = 13568</dl>
+
+<dl><dt><strong>EZ</strong> = 13824</dl>
+
+<dl><dt><strong>GE</strong> = 13312</dl>
+
+<dl><dt><strong>GT</strong> = 12800</dl>
+
+<dl><dt><strong>HLT</strong> = 3840</dl>
+
+<dl><dt><strong>JMC</strong> = 1024</dl>
+
+<dl><dt><strong>JMO</strong> = 768</dl>
+
+<dl><dt><strong>JMP</strong> = 256</dl>
+
+<dl><dt><strong>JMZ</strong> = 512</dl>
+
+<dl><dt><strong>LD</strong> = 1536</dl>
+
+<dl><dt><strong>LE</strong> = 13056</dl>
+
+<dl><dt><strong>LT</strong> = 12544</dl>
+
+<dl><dt><strong>MUL</strong> = 4864</dl>
+
+<dl><dt><strong>MV</strong> = 2048</dl>
+
+<dl><dt><strong>NOP</strong> = 0</dl>
+
+<dl><dt><strong>NOT</strong> = 9216</dl>
+
+<dl><dt><strong>NZ</strong> = 14080</dl>
+
+<dl><dt><strong>OR</strong> = 8448</dl>
+
+<dl><dt><strong>SET</strong> = 1280</dl>
+
+<dl><dt><strong>ST</strong> = 1792</dl>
+
+<dl><dt><strong>SUB</strong> = 4608</dl>
+
+<dl><dt><strong>XOR</strong> = 8960</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>REGISTRE</strong> = <a name="REGISTRE">class Enum</a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>A</strong> = 1</dl>
+
+<dl><dt><strong>B</strong> = 2</dl>
+
+<dl><dt><strong>C</strong> = 3</dl>
+
+<dl><dt><strong>D</strong> = 4</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>TYPEUSE</strong> = <a name="TYPEUSE">class Enum</a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>LIGNECOMMANDE</strong> = 2</dl>
+
+<dl><dt><strong>NORMAL</strong> = 1</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-asciiTOint"><strong>asciiTOint</strong></a>(code)</dt><dd><tt>Convertit&nbsp;lettre&nbsp;ascii&nbsp;en&nbsp;int.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;convertit&nbsp;une&nbsp;lettre&nbsp;ascii&nbsp;en&nbsp;code.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-asciiTOint">asciiTOint</a>('a')<br>
+97<br>
+&gt;&gt;&gt;&nbsp;<a href="#-asciiTOint">asciiTOint</a>('è')<br>
+0<br>
+&nbsp;<br>
+:param&nbsp;code:&nbsp;Une&nbsp;lettre&nbsp;ascii.<br>
+:type&nbsp;code:&nbsp;str<br>
+:return:&nbsp;code&nbsp;ascii.<br>
+:rtype:&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-enum"><strong>enum</strong></a>(**enums)</dt><dd><tt>Création&nbsp;du&nbsp;type&nbsp;Enum&nbsp;pour&nbsp;le&nbsp;besoin&nbsp;de&nbsp;l'application.<br>
+&nbsp;<br>
+:return:&nbsp;Un&nbsp;type&nbsp;Enum<br>
+:rtype:&nbsp;Enum<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;ENUMTEST&nbsp;=&nbsp;<a href="#-enum">enum</a>(VRAI&nbsp;=&nbsp;True,&nbsp;FAUX&nbsp;=&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;ENUMTEST.VRAI<br>
+True<br>
+&gt;&gt;&gt;&nbsp;ENUMTEST.FAUX<br>
+False</tt></dd></dl>
+ <dl><dt><a name="-intTOascii"><strong>intTOascii</strong></a>(code)</dt><dd><tt>Convertit&nbsp;code&nbsp;en&nbsp;lettre&nbsp;ascii.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;convertit&nbsp;le&nbsp;nombre&nbsp;code&nbsp;en&nbsp;une&nbsp;lettre&nbsp;ascii.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-intTOascii">intTOascii</a>(65)<br>
+'A'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-intTOascii">intTOascii</a>(0xFFFF)<br>
+'.'<br>
+&nbsp;<br>
+:param&nbsp;code:&nbsp;Nombre&nbsp;représentant&nbsp;une&nbsp;lettre&nbsp;ascii.<br>
+:type&nbsp;code:&nbsp;int<br>
+:return:&nbsp;Lettre&nbsp;ascii.<br>
+:rtype:&nbsp;str</tt></dd></dl>
+</td></tr></table>
+</body></html>

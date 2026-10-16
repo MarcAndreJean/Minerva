@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module 02-FonctionEditeur</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>02-FonctionEditeur</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/git/pconc/modules/02-fonctionediteur.py">d:\git\pconc\modules\02-fonctionediteur.py</a></font></td></tr></table>
+    <p><tt>Projet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Editeur,&nbsp;Compilateur&nbsp;et&nbsp;Micro-Ordinateur&nbsp;pour<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;langage&nbsp;assembleur.<br>
+Nom&nbsp;du&nbsp;fichier&nbsp;&nbsp;:&nbsp;02-FonctionEditeur.py<br>
+&nbsp;<br>
+Identification&nbsp;&nbsp;:&nbsp;02-FonctionEditeur.py<br>
+Titre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Fonction&nbsp;Editeur<br>
+Auteurs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Marc-André&nbsp;Jean<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;13-04-2017<br>
+Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Interface&nbsp;de&nbsp;sauvegarde/chargement&nbsp;de&nbsp;fichier.<br>
+&nbsp;<br>
+&nbsp;<br>
+Le&nbsp;module&nbsp;``FonctionEditeur``<br>
+================================<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;contient&nbsp;des&nbsp;fonctions&nbsp;pour&nbsp;permettre&nbsp;la&nbsp;sauvegarde&nbsp;et&nbsp;le<br>
+chargement&nbsp;de&nbsp;fichier&nbsp;*.asm&nbsp;en&nbsp;format&nbsp;texte.&nbsp;Le<br>
+module&nbsp;contient&nbsp;aussi&nbsp;des&nbsp;fonctions&nbsp;pour&nbsp;permettre&nbsp;la&nbsp;sauvegarde&nbsp;et&nbsp;le<br>
+chargement&nbsp;de&nbsp;fichier&nbsp;*.exeb&nbsp;en&nbsp;format&nbsp;binaire.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="struct.html">struct</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-loadByteCode"><strong>loadByteCode</strong></a>(path)</dt><dd><tt>Chargement&nbsp;du&nbsp;bytecode&nbsp;en&nbsp;version&nbsp;binaire.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;charge&nbsp;le&nbsp;bytecode&nbsp;d'un&nbsp;fichier&nbsp;binaire&nbsp;et<br>
+retourne&nbsp;une&nbsp;liste&nbsp;de&nbsp;int&nbsp;représentant&nbsp;le&nbsp;bytecode.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-saveByteCode">saveByteCode</a>("C:/test.exeb",&nbsp;[0x0200,&nbsp;0xFFFF])<br>
+&gt;&gt;&gt;&nbsp;<a href="#-loadByteCode">loadByteCode</a>("C:/test.exeb")[0:2]<br>
+[512,&nbsp;65535]<br>
+&gt;&gt;&gt;&nbsp;os.remove("C:/test.exeb")<br>
+&nbsp;<br>
+:param&nbsp;path:&nbsp;Chemin&nbsp;du&nbsp;fichier.<br>
+:type&nbsp;path:&nbsp;str<br>
+:return:&nbsp;Bytecodes.<br>
+:rtype:&nbsp;int[]</tt></dd></dl>
+ <dl><dt><a name="-loadTextCode"><strong>loadTextCode</strong></a>(path)</dt><dd><tt>Charge&nbsp;du&nbsp;code&nbsp;en&nbsp;version&nbsp;texte.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;charge&nbsp;le&nbsp;texte&nbsp;du&nbsp;fichier&nbsp;situer&nbsp;à<br>
+l'emplacement&nbsp;de&nbsp;l'argument&nbsp;«&nbsp;path&nbsp;».&nbsp;La&nbsp;fonction&nbsp;retourne<br>
+ensuite&nbsp;le&nbsp;texte.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-saveTextCode">saveTextCode</a>("C:/test.asm",&nbsp;"mov&nbsp;10&nbsp;acc")<br>
+&gt;&gt;&gt;&nbsp;<a href="#-loadTextCode">loadTextCode</a>("C:/test.asm")<br>
+'mov&nbsp;10&nbsp;acc'<br>
+&gt;&gt;&gt;&nbsp;os.remove("C:/test.asm")<br>
+&nbsp;<br>
+:param&nbsp;path:&nbsp;Chemin&nbsp;du&nbsp;fichier<br>
+:type&nbsp;path:&nbsp;str<br>
+:return:&nbsp;Texte&nbsp;du&nbsp;fichier.<br>
+:rtype:&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-saveByteCode"><strong>saveByteCode</strong></a>(path, bytecode)</dt><dd><tt>Sauvegarde&nbsp;du&nbsp;bytecode&nbsp;en&nbsp;version&nbsp;binaire.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;sauvegarde&nbsp;le&nbsp;bytecode&nbsp;en&nbsp;argument&nbsp;dans&nbsp;un<br>
+fichier&nbsp;binaire.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-saveByteCode">saveByteCode</a>("C:/test.exeb",&nbsp;[0x0200,&nbsp;0x0001])<br>
+&gt;&gt;&gt;&nbsp;os.remove("C:/test.exeb")<br>
+&nbsp;<br>
+:param&nbsp;path:&nbsp;Chemin&nbsp;du&nbsp;fichier.<br>
+:type&nbsp;path:&nbsp;str<br>
+:param&nbsp;code:&nbsp;Bytecodes.<br>
+:type&nbsp;code:&nbsp;int[]</tt></dd></dl>
+ <dl><dt><a name="-saveTextCode"><strong>saveTextCode</strong></a>(path, code)</dt><dd><tt>Sauvegarde&nbsp;du&nbsp;code&nbsp;en&nbsp;version&nbsp;texte.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;sauvegarde&nbsp;l'argument&nbsp;«&nbsp;code&nbsp;»&nbsp;dans&nbsp;le&nbsp;chemin<br>
+argument&nbsp;«&nbsp;path&nbsp;».<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-saveTextCode">saveTextCode</a>("C:/test.asm",&nbsp;"mov&nbsp;10&nbsp;acc")<br>
+&gt;&gt;&gt;&nbsp;os.remove("C:/test.asm")<br>
+&nbsp;<br>
+:param&nbsp;path:&nbsp;Chemin&nbsp;du&nbsp;fichier.<br>
+:type&nbsp;path:&nbsp;str<br>
+:param&nbsp;code:&nbsp;Données.<br>
+:type&nbsp;code:&nbsp;str</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__author__</strong> = 'Marc-Andre Jean'<br>
+<strong>__status__</strong> = 'Production'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Marc-Andre&nbsp;Jean</td></tr></table>
+</body></html>

@@ -1,0 +1,227 @@
+
+Le module ``Compileur``
+== == == == == == == == == == == == == == == ==
+
+ Test pour la syntaxe suivante:
+ OPCODE[REGISTRE][VALEUR]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    : example:
+    >>> try:
+    ...     compiler = __import__("03-Compileur")
+    ... except ImportError:
+    ...     import importlib
+    ...     compiler = importlib.import_module("Modules.03-Compileur")
+    ...
+    >>> __compileEx = compiler.__compileEx
+    >>> OPCODE = compiler.OPCODE
+    >>> REGISTRE = compiler.REGISTRE
+    >>> ADRESSAGE = compiler.ADRESSAGE
+    >>>
+    >>> # NOP & HLT
+    >>> [OPCODE.NOP, 0x0000] == __compileEx('NOP')
+    True
+    >>> [OPCODE.HLT, 0x0000] == __compileEx('HLT')
+    True
+    >>> # JUMPERS
+    >>> [OPCODE.JMP | ADRESSAGE.ADDR, 0x9999] \
+    ... == __compileEx('JMP', '0x9999')
+    True
+    >>> [OPCODE.JMZ | ADRESSAGE.ADDR, 0x8888] \
+    ... == __compileEx('JMZ', '0x8888')
+    True
+    >>> [OPCODE.JMO | ADRESSAGE.ADDR, 0x7777] \
+    ... == __compileEx('JMO', '0x7777')
+    True
+    >>> [OPCODE.JMC | ADRESSAGE.ADDR, 0x6666] \
+    ... == __compileEx('JMC', '0x6666')
+    True
+    >>>
+    >>> # SET & MOVERS
+    >>> [OPCODE.SET | REGISTRE.A, ord('A')] \
+    ... == __compileEx('SETA', "\'A\'")
+    True
+    >>> [OPCODE.LD | REGISTRE.B | ADRESSAGE.ADDR, 0x5555] \
+    ... == __compileEx('LDB', '0x5555')
+    True
+    >>> [OPCODE.LD | REGISTRE.B | ADRESSAGE.ADDR_OF_REG, REGISTRE.C] \
+    ... == __compileEx('LDB', 'C')
+    True
+    >>> [OPCODE.ST | REGISTRE.C | ADRESSAGE.ADDR, 0x3333] \
+    ... == __compileEx('STC', '0x3333')
+    True
+    >>> [OPCODE.ST | REGISTRE.C | ADRESSAGE.ADDR_OF_REG, REGISTRE.C] \
+    ... == __compileEx('STC', 'C')
+    True
+    >>> [OPCODE.ST | REGISTRE.D | ADRESSAGE.ADDR_OF_REG, REGISTRE.A] \
+    ... == __compileEx('STD', 'A')
+    True
+    >>>
+    >>> # ALU SPECIFIC
+    >>> [OPCODE.ADD | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('ADDA', 'B')
+    True
+    >>> [OPCODE.SUB | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('SUBB', 'C')
+    True
+    >>> [OPCODE.MUL | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('MULC', 'D')
+    True
+    >>> [OPCODE.DIV | REGISTRE.D, REGISTRE.A] \
+    ... == __compileEx('DIVD', 'A')
+    True
+    >>>
+    >>> # BITWISE
+    >>> [OPCODE.OR | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('ORA', 'B')
+    True
+    >>> [OPCODE.AND | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('ANDB', 'C')
+    True
+    >>> [OPCODE.XOR | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('XORC', 'D')
+    True
+    >>> [OPCODE.NOT | REGISTRE.D, 0x0000] \
+    ... == __compileEx('NOTD')
+    True
+    >>>
+    >>> # COMPARATORS
+    >>> [OPCODE.LT | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('LTA', 'B')
+    True
+    >>> [OPCODE.GT | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('GTB', 'C')
+    True
+    >>> [OPCODE.LE | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('LEC', 'D')
+    True
+    >>> [OPCODE.GE | REGISTRE.D, REGISTRE.A] \
+    ... == __compileEx('GED', 'A')
+    True
+    >>> [OPCODE.EQ | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('EQA', 'B')
+    True
+    >>> [OPCODE.EZ | REGISTRE.B, 0x0000] \
+    ... == __compileEx('EZB')
+    True
+    >>> [OPCODE.NZ | REGISTRE.C, 0x0000] \
+    ... == __compileEx('NZC')
+    True
+    >>>
+    >>> # DTA
+    >>> [ord("Z"), ord("Z")] \
+    ... == __compileEx('DTA', "\'Z\'")
+    True
+
+
+ Test pour la syntaxe suivante:
+ OPCODE [REGISTRE] [VALEUR]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    :example:
+    >>> try:
+    ...     compiler = __import__("03-Compileur")
+    ... except ImportError:
+    ...     import importlib
+    ...     compiler = importlib.import_module("Modules.03-Compileur")
+    ...
+    >>> __compileEx = compiler.__compileEx
+    >>> OPCODE = compiler.OPCODE
+    >>> REGISTRE = compiler.REGISTRE
+    >>> ADRESSAGE = compiler.ADRESSAGE
+    >>>
+    >>> # NOP & HLT
+    >>> [OPCODE.NOP, 0x0000] == __compileEx('NOP') \
+    True
+    >>> [OPCODE.HLT, 0x0000] == __compileEx('HLT') \
+    True
+    >>>
+    >>> # JUMPERS
+    >>> [OPCODE.JMP | ADRESSAGE.ADDR, 0x9999] \
+    ... == __compileEx('JMP', '0x9999')
+    True
+    >>> [OPCODE.JMZ | ADRESSAGE.ADDR, 0x8888] \
+    ... == __compileEx('JMZ', '0x8888')
+    True
+    >>> [OPCODE.JMO | ADRESSAGE.ADDR, 0x7777] \
+    ... == __compileEx('JMO', '0x7777')
+    True
+    >>> [OPCODE.JMC | ADRESSAGE.ADDR, 0x6666] \
+    ... == __compileEx('JMC', '0x6666')
+    True
+    >>>
+    >>> # SET & MOVERS
+    >>> [OPCODE.SET | REGISTRE.A, ord('A')] \
+    ... == __compileEx('SET', 'A', "\'A\'")
+    True
+    >>> [OPCODE.LD | REGISTRE.B | ADRESSAGE.ADDR, 0x5555] \
+    ... == __compileEx('LD', 'B', '0x5555')
+    True
+    >>> [OPCODE.LD | REGISTRE.B | ADRESSAGE.ADDR_OF_REG, REGISTRE.C] \
+    ... == __compileEx('LD' 'B', 'C')
+    True
+    >>> [OPCODE.ST | REGISTRE.C | ADRESSAGE.ADDR, 0x3333] \
+    ... == __compileEx('ST', 'C', '0x3333')
+    True
+    >>> [OPCODE.ST | REGISTRE.C | ADRESSAGE.ADDR_OF_REG, REGISTRE.C] \
+    ... == __compileEx('ST', 'C', 'C')
+    True
+    >>> [OPCODE.ST | REGISTRE.D | ADRESSAGE.ADDR_OF_REG, REGISTRE.A] \
+    ... == __compileEx('ST', 'D', 'A')
+    True
+    >>>
+    >>> # ALU SPECIFIC
+    >>> [OPCODE.ADD | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('ADD', 'A', 'B')
+    True
+    >>> [OPCODE.SUB | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('SUB', 'B', 'C')
+    True
+    >>> [OPCODE.MUL | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('MUL', 'C', 'D')
+    True
+    >>> [OPCODE.DIV | REGISTRE.D, REGISTRE.A] \
+    ... == __compileEx('DIV', 'D', 'A')
+    True
+    >>>
+    >>> # BITWISE
+    >>> [OPCODE.OR | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('OR', 'A', 'B')
+    True
+    >>> [OPCODE.AND | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('AND', 'B', 'C')
+    True
+    >>> [OPCODE.XOR | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('XOR', 'C', 'D')
+    True
+    >>> [OPCODE.NOT | REGISTRE.D, 0x0000] \
+    ... == __compileEx('NOT', 'D')
+    True
+    >>>
+    >>> # COMPARATORS
+    >>> [OPCODE.LT | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('LT', 'A', 'B')
+    True
+    >>> [OPCODE.GT | REGISTRE.B, REGISTRE.C] \
+    ... == __compileEx('GT', 'B', 'C')
+    True
+    >>> [OPCODE.LE | REGISTRE.C, REGISTRE.D] \
+    ... == __compileEx('LE', 'C', 'D')
+    True
+    >>> [OPCODE.GE | REGISTRE.D, REGISTRE.A] \
+    ... == __compileEx('GE', 'D', 'A')
+    True
+    >>> [OPCODE.EQ | REGISTRE.A, REGISTRE.B] \
+    ... == __compileEx('EQ', 'A', 'B')
+    True
+    >>> [OPCODE.EZ | REGISTRE.B, 0x0000] \
+    ... == __compileEx('EZ', 'B')
+    True
+    >>> [OPCODE.NZ | REGISTRE.C, 0x0000] \
+    ... == __compileEx('NZ', 'C')
+    True
+    >>>
+    >>> # DTA
+    >>> [ord("Z"), ord("Z")] \
+    ... == __compileEx('DTA', "\'Z\'")
+    True

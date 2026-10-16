@@ -1,0 +1,202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module 03-Compileur</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>03-Compileur</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/git/pconc/modules/03-compileur.py">d:\git\pconc\modules\03-compileur.py</a></font></td></tr></table>
+    <p><tt>Projet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Editeur,&nbsp;Compilateur&nbsp;et&nbsp;Micro-Ordinateur&nbsp;pour<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;langage&nbsp;assembleur.<br>
+Nom&nbsp;du&nbsp;fichier&nbsp;&nbsp;:&nbsp;03-Compileur.py<br>
+&nbsp;<br>
+Identification&nbsp;&nbsp;:&nbsp;03-Compileur<br>
+Titre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Compilateur<br>
+Auteurs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Marc-André&nbsp;Jean<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;13-04-2017<br>
+Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Compilateur&nbsp;pour&nbsp;le&nbsp;langage&nbsp;assembleur.<br>
+&nbsp;<br>
+&nbsp;<br>
+Le&nbsp;module&nbsp;``Compileur``<br>
+================================<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;contient&nbsp;la&nbsp;fonction&nbsp;<a href="#-compile">compile</a>(str)&nbsp;pour&nbsp;compiler&nbsp;le&nbsp;langage<br>
+assembleur&nbsp;donné&nbsp;en&nbsp;argument.&nbsp;Les&nbsp;informations&nbsp;sur&nbsp;la&nbsp;syntaxe&nbsp;et&nbsp;les<br>
+mots-clés&nbsp;du&nbsp;langage&nbsp;assembleur&nbsp;sont&nbsp;disponibles&nbsp;dans&nbsp;le&nbsp;manuel&nbsp;et<br>
+dans&nbsp;le&nbsp;document&nbsp;de&nbsp;spécification.&nbsp;La&nbsp;fonction&nbsp;<a href="#-compile">compile</a>()&nbsp;utilise<br>
+la&nbsp;fonction&nbsp;interne&nbsp;du&nbsp;module&nbsp;__compileEx(str,&nbsp;str)&nbsp;qui&nbsp;compile&nbsp;une<br>
+simple&nbsp;ligne&nbsp;de&nbsp;code.&nbsp;Le&nbsp;module&nbsp;utilise&nbsp;plusieurs&nbsp;énumérations&nbsp;et<br>
+dictionaires&nbsp;pour&nbsp;la&nbsp;rapidité&nbsp;du&nbsp;code&nbsp;et&nbsp;pour&nbsp;éviter&nbsp;les&nbsp;erreurs<br>
+de&nbsp;programmation.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="05-Enum.html">05-Enum</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="exceptions.html#Exception">exceptions.Exception</a>(<a href="exceptions.html#BaseException">exceptions.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="03-Compileur.html#CompilationErreur">CompilationErreur</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CompilationErreur">class <strong>CompilationErreur</strong></a>(<a href="exceptions.html#Exception">exceptions.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Classe&nbsp;d'exception&nbsp;pour&nbsp;la&nbsp;compilation.<br>
+&nbsp;<br>
+Il&nbsp;s'agit&nbsp;simplement&nbsp;d'un&nbsp;classe&nbsp;qui&nbsp;hérite&nbsp;de&nbsp;la&nbsp;classe<br>
+<a href="exceptions.html#Exception">Exception</a>&nbsp;de&nbsp;base&nbsp;de&nbsp;Python.&nbsp;Elle&nbsp;sera&nbsp;utilisée&nbsp;lors&nbsp;d'une<br>
+exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;compilation&nbsp;ligne&nbsp;par&nbsp;ligne<br>
+(voir&nbsp;__compileEx).<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;val&nbsp;=&nbsp;<a href="#CompilationErreur">CompilationErreur</a>("TEST")<br>
+&gt;&gt;&gt;&nbsp;val.value<br>
+'TEST'<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="03-Compileur.html#CompilationErreur">CompilationErreur</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+<dd><a href="exceptions.html#BaseException">exceptions.BaseException</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CompilationErreur-__init__"><strong>__init__</strong></a>(self, value)</dt><dd><tt>Constructeur&nbsp;de&nbsp;l'exception.<br>
+&nbsp;<br>
+:param&nbsp;value:&nbsp;Code&nbsp;d'erreur&nbsp;ou&nbsp;message&nbsp;d'erreur.<br>
+:type&nbsp;value:&nbsp;int&nbsp;or&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#CompilationErreur-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><a name="CompilationErreur-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__reduce__"><strong>__reduce__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CompilationErreur-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CompilationErreur-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#CompilationErreur-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<dl><dt><a name="CompilationErreur-__unicode__"><strong>__unicode__</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>message</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-compile"><strong>compile</strong></a>(code)</dt><dd><tt>Fonction&nbsp;central&nbsp;pour&nbsp;la&nbsp;compilation&nbsp;du&nbsp;code&nbsp;assembleur.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;prend&nbsp;un&nbsp;texte&nbsp;(plusieurs&nbsp;lignes)&nbsp;et&nbsp;convertit<br>
+celui-ci&nbsp;en&nbsp;tableau&nbsp;de&nbsp;16&nbsp;bits&nbsp;représentant&nbsp;le&nbsp;bytecode&nbsp;ROM&nbsp;du<br>
+code&nbsp;assembleur.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;expect&nbsp;=&nbsp;[True,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[OPCODE.SET&nbsp;|&nbsp;REGISTRE.A,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;83,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OPCODE.ST&nbsp;|&nbsp;REGISTRE.A&nbsp;|&nbsp;ADRESSAGE.ADDR,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16892,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OPCODE.HLT,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0]]<br>
+...<br>
+&gt;&gt;&gt;&nbsp;result&nbsp;=&nbsp;<a href="#-compile">compile</a>('SETA&nbsp;83\nSTA&nbsp;16892\nHLT')<br>
+&gt;&gt;&gt;&nbsp;expect&nbsp;==&nbsp;result<br>
+True<br>
+&nbsp;<br>
+:param&nbsp;code:&nbsp;Code&nbsp;(plusieurs&nbsp;lignes)&nbsp;à&nbsp;compiler.<br>
+:type&nbsp;code:&nbsp;str<br>
+&nbsp;<br>
+:return:&nbsp;True&nbsp;et&nbsp;un&nbsp;tableau&nbsp;de&nbsp;16&nbsp;bits&nbsp;de&nbsp;bytcode&nbsp;machine&nbsp;si&nbsp;la<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compilation&nbsp;est&nbsp;un&nbsp;succès,&nbsp;autrement&nbsp;il&nbsp;renvoit&nbsp;False<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et&nbsp;un&nbsp;message&nbsp;d'erreur.<br>
+:rtype:&nbsp;[boolean,&nbsp;int[]]&nbsp;ou&nbsp;[boolean,&nbsp;str]</tt></dd></dl>
+ <dl><dt><a name="-stringToInt"><strong>stringToInt</strong></a>(val)</dt><dd><tt>Fonction&nbsp;pour&nbsp;compilateur&nbsp;qui&nbsp;convertit&nbsp;l'argument.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;convertit&nbsp;(selon&nbsp;la&nbsp;représentation)&nbsp;un<br>
+string&nbsp;en&nbsp;int.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#-stringToInt">stringToInt</a>("99")<br>
+99<br>
+&gt;&gt;&gt;&nbsp;<a href="#-stringToInt">stringToInt</a>("'a'")<br>
+97<br>
+&gt;&gt;&gt;&nbsp;<a href="#-stringToInt">stringToInt</a>("0b1001")<br>
+9<br>
+&gt;&gt;&gt;&nbsp;<a href="#-stringToInt">stringToInt</a>("0o07")<br>
+7<br>
+&gt;&gt;&gt;&nbsp;<a href="#-stringToInt">stringToInt</a>("0x0A")<br>
+10<br>
+&nbsp;<br>
+:param&nbsp;val:&nbsp;String&nbsp;avec&nbsp;une&nbsp;représentation&nbsp;quelconque.<br>
+:type&nbsp;val:&nbsp;str<br>
+:return:&nbsp;Nombre&nbsp;égal&nbsp;à&nbsp;la&nbsp;représentation.<br>
+:rtype:&nbsp;int</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__author__</strong> = 'Marc-Andre Jean'<br>
+<strong>__status__</strong> = 'Production'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Marc-Andre&nbsp;Jean</td></tr></table>
+</body></html>

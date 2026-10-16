@@ -1,0 +1,331 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module 04-Micro-Ordinateur</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>04-Micro-Ordinateur</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/git/pconc/modules/04-micro-ordinateur.py">d:\git\pconc\modules\04-micro-ordinateur.py</a></font></td></tr></table>
+    <p><tt>Projet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Editeur,&nbsp;Compilateur&nbsp;et&nbsp;Micro-Ordinateur&nbsp;pour<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;langage&nbsp;assembleur.<br>
+Nom&nbsp;du&nbsp;fichier&nbsp;&nbsp;:&nbsp;04-Micro-Ordinateur.py<br>
+&nbsp;<br>
+Identification&nbsp;&nbsp;:&nbsp;04-Micro-Ordinateur<br>
+Titre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Micro-Ordinateur<br>
+Auteurs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Marc-André&nbsp;Jean<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;15-04-2017<br>
+Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Micro-Ordinateur.&nbsp;Rassemble&nbsp;les&nbsp;composantes&nbsp;et<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialise&nbsp;l'émulation.<br>
+&nbsp;<br>
+&nbsp;<br>
+Le&nbsp;module&nbsp;``Micro-Ordinateur``<br>
+================================<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;contient&nbsp;une&nbsp;classe&nbsp;nommée&nbsp;«&nbsp;Micro-Ordinateur&nbsp;»&nbsp;qui&nbsp;gère&nbsp;les<br>
+composantes&nbsp;(Bus,&nbsp;CPU,&nbsp;Clock&nbsp;et&nbsp;Mémoire).&nbsp;C'est&nbsp;le&nbsp;chef-d'orchestre<br>
+pour&nbsp;l'émulation&nbsp;et&nbsp;c'est&nbsp;lui&nbsp;qui&nbsp;est&nbsp;responsable&nbsp;du&nbsp;bon&nbsp;fonctionnement<br>
+du&nbsp;micro-ordinateur.&nbsp;La&nbsp;Clock&nbsp;est&nbsp;compris&nbsp;dans&nbsp;le&nbsp;micro-ordinateur&nbsp;comme<br>
+dans&nbsp;l'horloge&nbsp;à&nbsp;l'intérieur&nbsp;de&nbsp;la&nbsp;carte-mère&nbsp;d'un&nbsp;ordinateur.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="04-01-Bus.html">04-01-Bus</a><br>
+<a href="04-02-CPU.html">04-02-CPU</a><br>
+</td><td width="25%" valign=top><a href="05-Enum.html">05-Enum</a><br>
+<a href="04-05-IO.html">04-05-IO</a><br>
+</td><td width="25%" valign=top><a href="04-06-RAM.html">04-06-RAM</a><br>
+<a href="04-04-ROM.html">04-04-ROM</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="04-Micro-Ordinateur.html#MicroOrdinateur">MicroOrdinateur</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Thread">threading.Thread</a>(<a href="threading.html#_Verbose">threading._Verbose</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="04-Micro-Ordinateur.html#RunningClock">RunningClock</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MicroOrdinateur">class <strong>MicroOrdinateur</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>class&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a><br>
+========================<br>
+&nbsp;<br>
+Cette&nbsp;classe&nbsp;s'occupe&nbsp;de&nbsp;l'émulation&nbsp;du&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&nbsp;<br>
+..note:&nbsp;L'horloge&nbsp;est&nbsp;intégré&nbsp;au&nbsp;micro-ordinateur.&nbsp;La&nbsp;fonction<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#MicroOrdinateur-tick">tick</a>()&nbsp;et&nbsp;<a href="#MicroOrdinateur-toggleClock">toggleClock</a>()&nbsp;fait&nbsp;appel&nbsp;à&nbsp;fonction<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_runningClock()&nbsp;dans&nbsp;un&nbsp;<a href="threading.html#Thread">Thread</a>&nbsp;pour&nbsp;permettre&nbsp;une<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;utilisation&nbsp;asynchrone&nbsp;du&nbsp;micro-ordinateur&nbsp;et&nbsp;de&nbsp;la&nbsp;GUI.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MicroOrdinateur-__init__"><strong>__init__</strong></a>(self, extracomponents<font color="#909090">=[]</font>)</dt><dd><tt>Contrusteur&nbsp;de&nbsp;la&nbsp;classe&nbsp;Micro-Ordinateur.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;crée&nbsp;les&nbsp;composantes&nbsp;de&nbsp;bases&nbsp;du<br>
+micro-ordinateur.&nbsp;Elle&nbsp;attache&nbsp;des&nbsp;composantes<br>
+supplémentaires&nbsp;(pour&nbsp;permettre&nbsp;une&nbsp;compatibilité&nbsp;pour<br>
+une&nbsp;réutilisation&nbsp;ou&nbsp;utilisation&nbsp;externe&nbsp;de&nbsp;cette&nbsp;classe).<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&nbsp;<br>
+:param&nbsp;extracomponents:&nbsp;Liste&nbsp;de&nbsp;composants&nbsp;supplémentaires.<br>
+:type&nbsp;extracomponents:&nbsp;List<br>
+&nbsp;<br>
+..note:&nbsp;Les&nbsp;composants&nbsp;devraient&nbsp;être&nbsp;une&nbsp;classe&nbsp;ayant&nbsp;une<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;méthode&nbsp;nommée&nbsp;event()&nbsp;et&nbsp;une&nbsp;méthode&nbsp;nommée&nbsp;clock().</tt></dd></dl>
+
+<dl><dt><a name="MicroOrdinateur-execute"><strong>execute</strong></a>(self, bytecode)</dt><dd><tt>Fonction&nbsp;qui&nbsp;exécute&nbsp;une&nbsp;simple&nbsp;ligne&nbsp;de&nbsp;commande.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;exécute&nbsp;une&nbsp;simple&nbsp;ligne&nbsp;de&nbsp;commande.&nbsp;Elle<br>
+utilise&nbsp;le&nbsp;bytecode&nbsp;donné&nbsp;en&nbsp;argument.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-execute">execute</a>([0x0000,&nbsp;0x0000])<br>
+&nbsp;<br>
+:param&nbsp;bytecode:&nbsp;Code&nbsp;à&nbsp;exécuter.<br>
+:type&nbsp;bytecode:&nbsp;int[]&nbsp;(16&nbsp;bits)</tt></dd></dl>
+
+<dl><dt><a name="MicroOrdinateur-load"><strong>load</strong></a>(self, bytecode)</dt><dd><tt>Fonction&nbsp;pour&nbsp;charger&nbsp;bytecode&nbsp;dans&nbsp;la&nbsp;ROM&nbsp;un&nbsp;programme.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;charge&nbsp;un&nbsp;programme&nbsp;(celui&nbsp;dans&nbsp;bytecode)&nbsp;dans<br>
+la&nbsp;mémoire&nbsp;ROM&nbsp;du&nbsp;micro-ordinateur.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-load">load</a>([0xFAFA,&nbsp;0xAFAF,&nbsp;0x0000,&nbsp;0xFFFF])<br>
+&nbsp;<br>
+:param&nbsp;bytecode:&nbsp;Tableau&nbsp;de&nbsp;int&nbsp;(16&nbsp;bits)&nbsp;d'un&nbsp;programme<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exécutable.<br>
+:type&nbsp;bytecode:&nbsp;int[]</tt></dd></dl>
+
+<dl><dt><a name="MicroOrdinateur-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Fonction&nbsp;pour&nbsp;réinitialiser&nbsp;le&nbsp;micro-ordinateur.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;réinitialise&nbsp;la&nbsp;mémoire&nbsp;(sauf&nbsp;la&nbsp;ROM),&nbsp;les<br>
+états&nbsp;et&nbsp;informations&nbsp;du&nbsp;CPU,&nbsp;et&nbsp;les&nbsp;informations&nbsp;sur&nbsp;le<br>
+bus.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-reset">reset</a>()</tt></dd></dl>
+
+<dl><dt><a name="MicroOrdinateur-tick"><strong>tick</strong></a>(self)</dt><dd><tt>Fonction&nbsp;pour&nbsp;produire&nbsp;un&nbsp;coup&nbsp;d'horloge.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;produit&nbsp;un&nbsp;coup&nbsp;d'horloge&nbsp;dans&nbsp;le&nbsp;bus<br>
+duquel&nbsp;il&nbsp;propagera&nbsp;ce&nbsp;coup&nbsp;aux&nbsp;travers&nbsp;des&nbsp;autres<br>
+composantes.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-tick">tick</a>()</tt></dd></dl>
+
+<dl><dt><a name="MicroOrdinateur-toggleClock"><strong>toggleClock</strong></a>(self)</dt><dd><tt>Fonction&nbsp;pour&nbsp;changer&nbsp;l'état&nbsp;de&nbsp;l'horloge.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;active/désactiver&nbsp;l'horloge&nbsp;dépendant<br>
+de&nbsp;son&nbsp;état&nbsp;actuel.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-toggleClock">toggleClock</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#MicroOrdinateur-toggleClock">toggleClock</a>()</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RunningClock">class <strong>RunningClock</strong></a>(<a href="threading.html#Thread">threading.Thread</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>class&nbsp;<a href="#RunningClock">RunningClock</a><br>
+========================<br>
+&nbsp;<br>
+Cette&nbsp;classe&nbsp;s'occupe&nbsp;de&nbsp;l'horloge&nbsp;du&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;var&nbsp;=&nbsp;<a href="#MicroOrdinateur">MicroOrdinateur</a>()<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#RunningClock">RunningClock</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#RunningClock-start">start</a>()<br>
+&gt;&gt;&gt;&nbsp;var.bus.mode&nbsp;=&nbsp;MODE.HALT<br>
+&nbsp;<br>
+..note:&nbsp;L'horloge&nbsp;est&nbsp;intégré&nbsp;au&nbsp;micro-ordinateur.&nbsp;La&nbsp;fonction<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tick()&nbsp;et&nbsp;toggleClock()&nbsp;fait&nbsp;appel&nbsp;à&nbsp;fonction<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_runningClock()&nbsp;dans&nbsp;un&nbsp;<a href="threading.html#Thread">Thread</a>&nbsp;pour&nbsp;permettre&nbsp;une<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;utilisation&nbsp;asynchrone&nbsp;du&nbsp;micro-ordinateur&nbsp;et&nbsp;de&nbsp;la&nbsp;GUI.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="04-Micro-Ordinateur.html#RunningClock">RunningClock</a></dd>
+<dd><a href="threading.html#Thread">threading.Thread</a></dd>
+<dd><a href="threading.html#_Verbose">threading._Verbose</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RunningClock-run"><strong>run</strong></a>(self)</dt><dd><tt>&nbsp;Fonction&nbsp;thread&nbsp;pour&nbsp;le&nbsp;clock.<br>
+&nbsp;<br>
+&nbsp;Fonction&nbsp;thread&nbsp;pour&nbsp;le&nbsp;clock.&nbsp;Si&nbsp;un&nbsp;OPCODE&nbsp;a&nbsp;terminé&nbsp;ces<br>
+&nbsp;«computations»&nbsp;et&nbsp;que&nbsp;le&nbsp;bus&nbsp;est&nbsp;maintenant&nbsp;en&nbsp;arrêt&nbsp;(en<br>
+&nbsp;attente&nbsp;d'un&nbsp;nouveau&nbsp;coup&nbsp;d'horloge),&nbsp;et&nbsp;bien&nbsp;nous&nbsp;lui&nbsp;donnons<br>
+&nbsp;un&nbsp;nouveau&nbsp;coup&nbsp;d'horloge.<br>
+&nbsp;<br>
+..note:&nbsp;La&nbsp;fonction&nbsp;ne&nbsp;donne&nbsp;aucun&nbsp;coup&nbsp;d'horloge&nbsp;si&nbsp;clockActive<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;est&nbsp;devenu&nbsp;inactif.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><a name="RunningClock-__init__"><strong>__init__</strong></a>(self, group<font color="#909090">=None</font>, target<font color="#909090">=None</font>, name<font color="#909090">=None</font>, args<font color="#909090">=()</font>, kwargs<font color="#909090">=None</font>, verbose<font color="#909090">=None</font>)</dt><dd><tt>This&nbsp;constructor&nbsp;should&nbsp;always&nbsp;be&nbsp;called&nbsp;with&nbsp;keyword&nbsp;arguments.&nbsp;Arguments&nbsp;are:<br>
+&nbsp;<br>
+*group*&nbsp;should&nbsp;be&nbsp;None;&nbsp;reserved&nbsp;for&nbsp;future&nbsp;extension&nbsp;when&nbsp;a&nbsp;ThreadGroup<br>
+class&nbsp;is&nbsp;implemented.<br>
+&nbsp;<br>
+*target*&nbsp;is&nbsp;the&nbsp;callable&nbsp;object&nbsp;to&nbsp;be&nbsp;invoked&nbsp;by&nbsp;the&nbsp;<a href="#RunningClock-run">run</a>()<br>
+method.&nbsp;Defaults&nbsp;to&nbsp;None,&nbsp;meaning&nbsp;nothing&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+*name*&nbsp;is&nbsp;the&nbsp;thread&nbsp;name.&nbsp;By&nbsp;default,&nbsp;a&nbsp;unique&nbsp;name&nbsp;is&nbsp;constructed&nbsp;of<br>
+the&nbsp;form&nbsp;"<a href="threading.html#Thread">Thread</a>-N"&nbsp;where&nbsp;N&nbsp;is&nbsp;a&nbsp;small&nbsp;decimal&nbsp;number.<br>
+&nbsp;<br>
+*args*&nbsp;is&nbsp;the&nbsp;argument&nbsp;tuple&nbsp;for&nbsp;the&nbsp;target&nbsp;invocation.&nbsp;Defaults&nbsp;to&nbsp;().<br>
+&nbsp;<br>
+*kwargs*&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;keyword&nbsp;arguments&nbsp;for&nbsp;the&nbsp;target<br>
+invocation.&nbsp;Defaults&nbsp;to&nbsp;{}.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;subclass&nbsp;overrides&nbsp;the&nbsp;constructor,&nbsp;it&nbsp;must&nbsp;make&nbsp;sure&nbsp;to&nbsp;invoke<br>
+the&nbsp;base&nbsp;class&nbsp;constructor&nbsp;(<a href="threading.html#Thread">Thread</a>.<a href="#RunningClock-__init__">__init__</a>())&nbsp;before&nbsp;doing&nbsp;anything<br>
+else&nbsp;to&nbsp;the&nbsp;thread.</tt></dd></dl>
+
+<dl><dt><a name="RunningClock-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RunningClock-getName"><strong>getName</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RunningClock-isAlive"><strong>isAlive</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;the&nbsp;thread&nbsp;is&nbsp;alive.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;True&nbsp;just&nbsp;before&nbsp;the&nbsp;<a href="#RunningClock-run">run</a>()&nbsp;method&nbsp;starts&nbsp;until&nbsp;just<br>
+after&nbsp;the&nbsp;<a href="#RunningClock-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;The&nbsp;module&nbsp;function&nbsp;enumerate()<br>
+returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;alive&nbsp;threads.</tt></dd></dl>
+
+<dl><dt><a name="RunningClock-isDaemon"><strong>isDaemon</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RunningClock-is_alive"><strong>is_alive</strong></a> = isAlive(self)</dt><dd><tt>Return&nbsp;whether&nbsp;the&nbsp;thread&nbsp;is&nbsp;alive.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;True&nbsp;just&nbsp;before&nbsp;the&nbsp;<a href="#RunningClock-run">run</a>()&nbsp;method&nbsp;starts&nbsp;until&nbsp;just<br>
+after&nbsp;the&nbsp;<a href="#RunningClock-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;The&nbsp;module&nbsp;function&nbsp;enumerate()<br>
+returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;alive&nbsp;threads.</tt></dd></dl>
+
+<dl><dt><a name="RunningClock-join"><strong>join</strong></a>(self, timeout<font color="#909090">=None</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+This&nbsp;blocks&nbsp;the&nbsp;calling&nbsp;thread&nbsp;until&nbsp;the&nbsp;thread&nbsp;whose&nbsp;<a href="#RunningClock-join">join</a>()&nbsp;method&nbsp;is<br>
+called&nbsp;terminates&nbsp;--&nbsp;either&nbsp;normally&nbsp;or&nbsp;through&nbsp;an&nbsp;unhandled&nbsp;exception<br>
+or&nbsp;until&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;occurs.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;present&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a<br>
+floating&nbsp;point&nbsp;number&nbsp;specifying&nbsp;a&nbsp;timeout&nbsp;for&nbsp;the&nbsp;operation&nbsp;in&nbsp;seconds<br>
+(or&nbsp;fractions&nbsp;thereof).&nbsp;As&nbsp;<a href="#RunningClock-join">join</a>()&nbsp;always&nbsp;returns&nbsp;None,&nbsp;you&nbsp;must&nbsp;call<br>
+<a href="#RunningClock-isAlive">isAlive</a>()&nbsp;after&nbsp;<a href="#RunningClock-join">join</a>()&nbsp;to&nbsp;decide&nbsp;whether&nbsp;a&nbsp;timeout&nbsp;happened&nbsp;--&nbsp;if&nbsp;the<br>
+thread&nbsp;is&nbsp;still&nbsp;alive,&nbsp;the&nbsp;<a href="#RunningClock-join">join</a>()&nbsp;call&nbsp;timed&nbsp;out.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;not&nbsp;present&nbsp;or&nbsp;None,&nbsp;the&nbsp;operation&nbsp;will<br>
+block&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+A&nbsp;thread&nbsp;can&nbsp;be&nbsp;<a href="#RunningClock-join">join</a>()ed&nbsp;many&nbsp;times.<br>
+&nbsp;<br>
+<a href="#RunningClock-join">join</a>()&nbsp;raises&nbsp;a&nbsp;RuntimeError&nbsp;if&nbsp;an&nbsp;attempt&nbsp;is&nbsp;made&nbsp;to&nbsp;join&nbsp;the&nbsp;current<br>
+thread&nbsp;as&nbsp;that&nbsp;would&nbsp;cause&nbsp;a&nbsp;deadlock.&nbsp;It&nbsp;is&nbsp;also&nbsp;an&nbsp;error&nbsp;to&nbsp;<a href="#RunningClock-join">join</a>()&nbsp;a<br>
+thread&nbsp;before&nbsp;it&nbsp;has&nbsp;been&nbsp;started&nbsp;and&nbsp;attempts&nbsp;to&nbsp;do&nbsp;so&nbsp;raises&nbsp;the&nbsp;same<br>
+exception.</tt></dd></dl>
+
+<dl><dt><a name="RunningClock-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt></dl>
+
+<dl><dt><a name="RunningClock-setName"><strong>setName</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="RunningClock-start"><strong>start</strong></a>(self)</dt><dd><tt>Start&nbsp;the&nbsp;thread's&nbsp;activity.<br>
+&nbsp;<br>
+It&nbsp;must&nbsp;be&nbsp;called&nbsp;at&nbsp;most&nbsp;once&nbsp;per&nbsp;thread&nbsp;object.&nbsp;It&nbsp;arranges&nbsp;for&nbsp;the<br>
+object's&nbsp;<a href="#RunningClock-run">run</a>()&nbsp;method&nbsp;to&nbsp;be&nbsp;invoked&nbsp;in&nbsp;a&nbsp;separate&nbsp;thread&nbsp;of&nbsp;control.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;will&nbsp;raise&nbsp;a&nbsp;RuntimeError&nbsp;if&nbsp;called&nbsp;more&nbsp;than&nbsp;once&nbsp;on&nbsp;the<br>
+same&nbsp;thread&nbsp;object.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><strong>daemon</strong></dt>
+<dd><tt>A&nbsp;boolean&nbsp;value&nbsp;indicating&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon&nbsp;thread&nbsp;(True)&nbsp;or&nbsp;not&nbsp;(False).<br>
+&nbsp;<br>
+This&nbsp;must&nbsp;be&nbsp;set&nbsp;before&nbsp;start()&nbsp;is&nbsp;called,&nbsp;otherwise&nbsp;RuntimeError&nbsp;is<br>
+raised.&nbsp;Its&nbsp;initial&nbsp;value&nbsp;is&nbsp;inherited&nbsp;from&nbsp;the&nbsp;creating&nbsp;thread;&nbsp;the<br>
+main&nbsp;thread&nbsp;is&nbsp;not&nbsp;a&nbsp;daemon&nbsp;thread&nbsp;and&nbsp;therefore&nbsp;all&nbsp;threads&nbsp;created&nbsp;in<br>
+the&nbsp;main&nbsp;thread&nbsp;default&nbsp;to&nbsp;daemon&nbsp;=&nbsp;False.<br>
+&nbsp;<br>
+The&nbsp;entire&nbsp;Python&nbsp;program&nbsp;exits&nbsp;when&nbsp;no&nbsp;alive&nbsp;non-daemon&nbsp;threads&nbsp;are<br>
+left.</tt></dd>
+</dl>
+<dl><dt><strong>ident</strong></dt>
+<dd><tt>Thread&nbsp;identifier&nbsp;of&nbsp;this&nbsp;thread&nbsp;or&nbsp;None&nbsp;if&nbsp;it&nbsp;has&nbsp;not&nbsp;been&nbsp;started.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;nonzero&nbsp;integer.&nbsp;See&nbsp;the&nbsp;thread.get_ident()&nbsp;function.&nbsp;Thread<br>
+identifiers&nbsp;may&nbsp;be&nbsp;recycled&nbsp;when&nbsp;a&nbsp;thread&nbsp;exits&nbsp;and&nbsp;another&nbsp;thread&nbsp;is<br>
+created.&nbsp;The&nbsp;identifier&nbsp;is&nbsp;available&nbsp;even&nbsp;after&nbsp;the&nbsp;thread&nbsp;has&nbsp;exited.</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>A&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+It&nbsp;has&nbsp;no&nbsp;semantics.&nbsp;Multiple&nbsp;threads&nbsp;may&nbsp;be&nbsp;given&nbsp;the&nbsp;same&nbsp;name.&nbsp;The<br>
+initial&nbsp;name&nbsp;is&nbsp;set&nbsp;by&nbsp;the&nbsp;constructor.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="threading.html#_Verbose">threading._Verbose</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Lock"><strong>Lock</strong></a> = allocate_lock(...)</dt><dd><tt>allocate_lock()&nbsp;-&gt;&nbsp;lock&nbsp;object<br>
+(allocate()&nbsp;is&nbsp;an&nbsp;obsolete&nbsp;synonym)<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;lock&nbsp;object.&nbsp;&nbsp;See&nbsp;help(LockType)&nbsp;for&nbsp;information&nbsp;about&nbsp;locks.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__author__</strong> = 'Marc-Andre Jean'<br>
+<strong>__status__</strong> = 'production'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Marc-Andre&nbsp;Jean</td></tr></table>
+</body></html>

@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module 01-05-TextCin</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>01-05-TextCin</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/git/pconc/modules/01-05-textcin.py">d:\git\pconc\modules\01-05-textcin.py</a></font></td></tr></table>
+    <p><tt>Projet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Editeur,&nbsp;Compilateur&nbsp;et&nbsp;Micro-Ordinateur&nbsp;pour<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;langage&nbsp;assembleur.<br>
+Nom&nbsp;du&nbsp;fichier&nbsp;&nbsp;:&nbsp;01-05-<a href="#TextCin">TextCin</a>.py<br>
+&nbsp;<br>
+Identification&nbsp;&nbsp;:&nbsp;01-05-<a href="#TextCin">TextCin</a><br>
+Titre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Widget&nbsp;:&nbsp;Texte&nbsp;pour&nbsp;console&nbsp;input<br>
+Auteurs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Marc-André&nbsp;Jean<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;16-04-2017<br>
+Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Un&nbsp;widget&nbsp;Tk&nbsp;qui&nbsp;représente&nbsp;une&nbsp;entrée&nbsp;console&nbsp;(keyboard).<br>
+&nbsp;<br>
+&nbsp;<br>
+Le&nbsp;module&nbsp;``<a href="#TextCin">TextCin</a>``<br>
+================================<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;contient&nbsp;une&nbsp;classe&nbsp;nommée&nbsp;«&nbsp;<a href="#TextCin">TextCin</a>&nbsp;»&nbsp;qui&nbsp;est&nbsp;un&nbsp;widget&nbsp;similaire<br>
+à&nbsp;<a href="Tkinter.html#Text">Text</a>&nbsp;mais&nbsp;modifié&nbsp;pour&nbsp;permettre&nbsp;le&nbsp;contrôle&nbsp;des&nbsp;entrées&nbsp;du&nbsp;clavier.&nbsp;Il<br>
+s'agit&nbsp;d'un&nbsp;Widget&nbsp;qui&nbsp;n'existe&nbsp;pas&nbsp;dans&nbsp;la&nbsp;bibliothèque&nbsp;de&nbsp;Tkinter<br>
+(Python).</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="FixTk.html">FixTk</a><br>
+<a href="05-Enum.html">05-Enum</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="_tkinter.html">_tkinter</a><br>
+<a href="ttk.html">ttk</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="Tkinter.html#Text">Tkinter.Text</a>(<a href="Tkinter.html#Widget">Tkinter.Widget</a>, <a href="Tkinter.html#XView">Tkinter.XView</a>, <a href="Tkinter.html#YView">Tkinter.YView</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="01-05-TextCin.html#TextCin">TextCin</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TextCin">class <strong>TextCin</strong></a>(<a href="Tkinter.html#Text">Tkinter.Text</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TextCin">TextCin</a>&nbsp;est&nbsp;tout&nbsp;simplement&nbsp;un&nbsp;Widget&nbsp;<a href="Tkinter.html#Text">Text</a>&nbsp;auquel&nbsp;nous&nbsp;contrôlons&nbsp;et<br>
+gèrons&nbsp;les&nbsp;entrées&nbsp;clavier&nbsp;avec&nbsp;une&nbsp;whitelist.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="01-05-TextCin.html#TextCin">TextCin</a></dd>
+<dd><a href="Tkinter.html#Text">Tkinter.Text</a></dd>
+<dd><a href="Tkinter.html#Widget">Tkinter.Widget</a></dd>
+<dd><a href="Tkinter.html#BaseWidget">Tkinter.BaseWidget</a></dd>
+<dd><a href="Tkinter.html#Misc">Tkinter.Misc</a></dd>
+<dd><a href="Tkinter.html#Pack">Tkinter.Pack</a></dd>
+<dd><a href="Tkinter.html#Place">Tkinter.Place</a></dd>
+<dd><a href="Tkinter.html#Grid">Tkinter.Grid</a></dd>
+<dd><a href="Tkinter.html#XView">Tkinter.XView</a></dd>
+<dd><a href="Tkinter.html#YView">Tkinter.YView</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TextCin-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt><dd><tt>Constructeur&nbsp;de&nbsp;<a href="#TextCin">TextCin</a>.<br>
+&nbsp;<br>
+Le&nbsp;constructeurs&nbsp;prend&nbsp;en&nbsp;argument&nbsp;*args&nbsp;et&nbsp;**kwargs&nbsp;pour<br>
+une&nbsp;construction&nbsp;plus&nbsp;complexe&nbsp;du&nbsp;<a href="Tkinter.html#Text">Text</a>&nbsp;si&nbsp;désiré.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()</tt></dd></dl>
+
+<dl><dt><a name="TextCin-afterRefresh"><strong>afterRefresh</strong></a>(self, event)</dt><dd><tt>Fonction&nbsp;qui&nbsp;est&nbsp;appelée&nbsp;par&nbsp;l'event&nbsp;&lt;&lt;Change&gt;&gt;.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;est&nbsp;appelée&nbsp;par&nbsp;l'event&nbsp;&lt;&lt;Change&gt;&gt;.&nbsp;Elle&nbsp;s'occupe<br>
+de&nbsp;mettre&nbsp;à&nbsp;jour&nbsp;le&nbsp;texte&nbsp;du&nbsp;widget&nbsp;après&nbsp;un&nbsp;appel&nbsp;de&nbsp;refresh.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#TextCin-afterRefresh">afterRefresh</a>(None)<br>
+&nbsp;<br>
+:param&nbsp;event:&nbsp;Object&nbsp;event&nbsp;qui&nbsp;détient&nbsp;les&nbsp;informations.<br>
+:type&nbsp;event:&nbsp;Event.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-refresh"><strong>refresh</strong></a>(self, newkey)</dt><dd><tt>Prépare&nbsp;la&nbsp;mise&nbsp;à&nbsp;jour&nbsp;et&nbsp;traite&nbsp;l'entrée&nbsp;clavier.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;prépare&nbsp;la&nbsp;mise&nbsp;à&nbsp;jour&nbsp;(car&nbsp;elle&nbsp;est&nbsp;appelée&nbsp;avant<br>
+l'event&nbsp;&lt;&lt;Change&gt;&gt;)&nbsp;et&nbsp;traite&nbsp;l'entrée&nbsp;clavier&nbsp;puis&nbsp;la&nbsp;place&nbsp;dans<br>
+le&nbsp;tampon&nbsp;mémoire&nbsp;du&nbsp;clavier.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;egal&nbsp;=&nbsp;'L'&nbsp;+&nbsp;('.'&nbsp;*&nbsp;254)<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#TextCin-refresh">refresh</a>('L')&nbsp;==&nbsp;egal<br>
+True<br>
+&nbsp;<br>
+:param&nbsp;newkey:&nbsp;Nouvelle&nbsp;entrée&nbsp;clavier&nbsp;(touche).<br>
+:type&nbsp;newkey:&nbsp;char<br>
+:return:&nbsp;Mémoire&nbsp;tampon&nbsp;des&nbsp;entrées&nbsp;clavier.<br>
+:rtype:&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="TextCin-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Réinitialise&nbsp;le&nbsp;texte.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;réinitialise&nbsp;le&nbsp;texte.<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#TextCin-reset">reset</a>()</tt></dd></dl>
+
+<dl><dt><a name="TextCin-setCharacter"><strong>setCharacter</strong></a>(self, pos, char)</dt><dd><tt>Change&nbsp;un&nbsp;caractère&nbsp;dans&nbsp;le&nbsp;widget&nbsp;<a href="Tkinter.html#Text">Text</a>.<br>
+&nbsp;<br>
+Cette&nbsp;fonction&nbsp;change&nbsp;la&nbsp;valeur&nbsp;du&nbsp;caractère&nbsp;«&nbsp;char&nbsp;»&nbsp;à&nbsp;la&nbsp;position<br>
+«&nbsp;pos&nbsp;».<br>
+&nbsp;<br>
+:example:<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#TextCin">TextCin</a>()<br>
+&gt;&gt;&gt;&nbsp;test.<a href="#TextCin-setCharacter">setCharacter</a>(0,&nbsp;'A')<br>
+&nbsp;<br>
+:param&nbsp;pos:&nbsp;Position&nbsp;à&nbsp;remplacer.<br>
+:type&nbsp;pos:&nbsp;int<br>
+:param&nbsp;char:&nbsp;Remplacer&nbsp;par&nbsp;ce&nbsp;caractère.<br>
+:type&nbsp;char:&nbsp;str</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#Text">Tkinter.Text</a>:<br>
+<dl><dt><a name="TextCin-bbox"><strong>bbox</strong></a>(self, *args)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(x,y,width,height)&nbsp;which&nbsp;gives&nbsp;the&nbsp;bounding<br>
+box&nbsp;of&nbsp;the&nbsp;visible&nbsp;part&nbsp;of&nbsp;the&nbsp;character&nbsp;at&nbsp;the&nbsp;index&nbsp;in&nbsp;ARGS.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-compare"><strong>compare</strong></a>(self, index1, op, index2)</dt><dd><tt>Return&nbsp;whether&nbsp;between&nbsp;index&nbsp;INDEX1&nbsp;and&nbsp;index&nbsp;INDEX2&nbsp;the<br>
+relation&nbsp;OP&nbsp;is&nbsp;satisfied.&nbsp;OP&nbsp;is&nbsp;one&nbsp;of&nbsp;&lt;,&nbsp;&lt;=,&nbsp;==,&nbsp;&gt;=,&nbsp;&gt;,&nbsp;or&nbsp;!=.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-debug"><strong>debug</strong></a>(self, boolean<font color="#909090">=None</font>)</dt><dd><tt>Turn&nbsp;on&nbsp;the&nbsp;internal&nbsp;consistency&nbsp;checks&nbsp;of&nbsp;the&nbsp;B-Tree&nbsp;inside&nbsp;the&nbsp;text<br>
+widget&nbsp;according&nbsp;to&nbsp;BOOLEAN.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-delete"><strong>delete</strong></a>(self, index1, index2<font color="#909090">=None</font>)</dt><dd><tt>Delete&nbsp;the&nbsp;characters&nbsp;between&nbsp;INDEX1&nbsp;and&nbsp;INDEX2&nbsp;(not&nbsp;included).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-dlineinfo"><strong>dlineinfo</strong></a>(self, index)</dt><dd><tt>Return&nbsp;tuple&nbsp;(x,y,width,height,baseline)&nbsp;giving&nbsp;the&nbsp;bounding&nbsp;box<br>
+and&nbsp;baseline&nbsp;position&nbsp;of&nbsp;the&nbsp;visible&nbsp;part&nbsp;of&nbsp;the&nbsp;line&nbsp;containing<br>
+the&nbsp;character&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-dump"><strong>dump</strong></a>(self, index1, index2<font color="#909090">=None</font>, command<font color="#909090">=None</font>, **kw)</dt><dd><tt>Return&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;widget&nbsp;between&nbsp;index1&nbsp;and&nbsp;index2.<br>
+&nbsp;<br>
+The&nbsp;type&nbsp;of&nbsp;contents&nbsp;returned&nbsp;in&nbsp;filtered&nbsp;based&nbsp;on&nbsp;the&nbsp;keyword<br>
+parameters;&nbsp;if&nbsp;'all',&nbsp;'image',&nbsp;'mark',&nbsp;'tag',&nbsp;'text',&nbsp;or&nbsp;'window'&nbsp;are<br>
+given&nbsp;and&nbsp;true,&nbsp;then&nbsp;the&nbsp;corresponding&nbsp;items&nbsp;are&nbsp;returned.&nbsp;The&nbsp;result<br>
+is&nbsp;a&nbsp;list&nbsp;of&nbsp;triples&nbsp;of&nbsp;the&nbsp;form&nbsp;(key,&nbsp;value,&nbsp;index).&nbsp;If&nbsp;none&nbsp;of&nbsp;the<br>
+keywords&nbsp;are&nbsp;true&nbsp;then&nbsp;'all'&nbsp;is&nbsp;used&nbsp;by&nbsp;default.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;'command'&nbsp;argument&nbsp;is&nbsp;given,&nbsp;it&nbsp;is&nbsp;called&nbsp;once&nbsp;for&nbsp;each&nbsp;element<br>
+of&nbsp;the&nbsp;list&nbsp;of&nbsp;triples,&nbsp;with&nbsp;the&nbsp;values&nbsp;of&nbsp;each&nbsp;triple&nbsp;serving&nbsp;as&nbsp;the<br>
+arguments&nbsp;to&nbsp;the&nbsp;function.&nbsp;In&nbsp;this&nbsp;case&nbsp;the&nbsp;list&nbsp;is&nbsp;not&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit"><strong>edit</strong></a>(self, *args)</dt><dd><tt>Internal&nbsp;method<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;controls&nbsp;the&nbsp;undo&nbsp;mechanism&nbsp;and<br>
+the&nbsp;modified&nbsp;flag.&nbsp;The&nbsp;exact&nbsp;behavior&nbsp;of&nbsp;the<br>
+command&nbsp;depends&nbsp;on&nbsp;the&nbsp;option&nbsp;argument&nbsp;that<br>
+follows&nbsp;the&nbsp;edit&nbsp;argument.&nbsp;The&nbsp;following&nbsp;forms<br>
+of&nbsp;the&nbsp;command&nbsp;are&nbsp;currently&nbsp;supported:<br>
+&nbsp;<br>
+edit_modified,&nbsp;edit_redo,&nbsp;edit_reset,&nbsp;edit_separator<br>
+and&nbsp;edit_undo</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit_modified"><strong>edit_modified</strong></a>(self, arg<font color="#909090">=None</font>)</dt><dd><tt>Get&nbsp;or&nbsp;Set&nbsp;the&nbsp;modified&nbsp;flag<br>
+&nbsp;<br>
+If&nbsp;arg&nbsp;is&nbsp;not&nbsp;specified,&nbsp;returns&nbsp;the&nbsp;modified<br>
+flag&nbsp;of&nbsp;the&nbsp;widget.&nbsp;The&nbsp;insert,&nbsp;delete,&nbsp;edit&nbsp;undo&nbsp;and<br>
+edit&nbsp;redo&nbsp;commands&nbsp;or&nbsp;the&nbsp;user&nbsp;can&nbsp;set&nbsp;or&nbsp;clear&nbsp;the<br>
+modified&nbsp;flag.&nbsp;If&nbsp;boolean&nbsp;is&nbsp;specified,&nbsp;sets&nbsp;the<br>
+modified&nbsp;flag&nbsp;of&nbsp;the&nbsp;widget&nbsp;to&nbsp;arg.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit_redo"><strong>edit_redo</strong></a>(self)</dt><dd><tt>Redo&nbsp;the&nbsp;last&nbsp;undone&nbsp;edit<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;undo&nbsp;option&nbsp;is&nbsp;true,&nbsp;reapplies&nbsp;the&nbsp;last<br>
+undone&nbsp;edits&nbsp;provided&nbsp;no&nbsp;other&nbsp;edits&nbsp;were&nbsp;done&nbsp;since<br>
+then.&nbsp;Generates&nbsp;an&nbsp;error&nbsp;when&nbsp;the&nbsp;redo&nbsp;stack&nbsp;is&nbsp;empty.<br>
+Does&nbsp;nothing&nbsp;when&nbsp;the&nbsp;undo&nbsp;option&nbsp;is&nbsp;false.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit_reset"><strong>edit_reset</strong></a>(self)</dt><dd><tt>Clears&nbsp;the&nbsp;undo&nbsp;and&nbsp;redo&nbsp;stacks</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit_separator"><strong>edit_separator</strong></a>(self)</dt><dd><tt>Inserts&nbsp;a&nbsp;separator&nbsp;(boundary)&nbsp;on&nbsp;the&nbsp;undo&nbsp;stack.<br>
+&nbsp;<br>
+Does&nbsp;nothing&nbsp;when&nbsp;the&nbsp;undo&nbsp;option&nbsp;is&nbsp;false</tt></dd></dl>
+
+<dl><dt><a name="TextCin-edit_undo"><strong>edit_undo</strong></a>(self)</dt><dd><tt>Undoes&nbsp;the&nbsp;last&nbsp;edit&nbsp;action<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;undo&nbsp;option&nbsp;is&nbsp;true.&nbsp;An&nbsp;edit&nbsp;action&nbsp;is&nbsp;defined<br>
+as&nbsp;all&nbsp;the&nbsp;insert&nbsp;and&nbsp;delete&nbsp;commands&nbsp;that&nbsp;are&nbsp;recorded<br>
+on&nbsp;the&nbsp;undo&nbsp;stack&nbsp;in&nbsp;between&nbsp;two&nbsp;separators.&nbsp;Generates<br>
+an&nbsp;error&nbsp;when&nbsp;the&nbsp;undo&nbsp;stack&nbsp;is&nbsp;empty.&nbsp;Does&nbsp;nothing<br>
+when&nbsp;the&nbsp;undo&nbsp;option&nbsp;is&nbsp;false</tt></dd></dl>
+
+<dl><dt><a name="TextCin-get"><strong>get</strong></a>(self, index1, index2<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;the&nbsp;text&nbsp;from&nbsp;INDEX1&nbsp;to&nbsp;INDEX2&nbsp;(not&nbsp;included).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-image_cget"><strong>image_cget</strong></a>(self, index, option)</dt><dd><tt>Return&nbsp;the&nbsp;value&nbsp;of&nbsp;OPTION&nbsp;of&nbsp;an&nbsp;embedded&nbsp;image&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-image_configure"><strong>image_configure</strong></a>(self, index, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;an&nbsp;embedded&nbsp;image&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-image_create"><strong>image_create</strong></a>(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Create&nbsp;an&nbsp;embedded&nbsp;image&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-image_names"><strong>image_names</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;names&nbsp;of&nbsp;embedded&nbsp;images&nbsp;in&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-index"><strong>index</strong></a>(self, index)</dt><dd><tt>Return&nbsp;the&nbsp;index&nbsp;in&nbsp;the&nbsp;form&nbsp;line.char&nbsp;for&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-insert"><strong>insert</strong></a>(self, index, chars, *args)</dt><dd><tt>Insert&nbsp;CHARS&nbsp;before&nbsp;the&nbsp;characters&nbsp;at&nbsp;INDEX.&nbsp;An&nbsp;additional<br>
+tag&nbsp;can&nbsp;be&nbsp;given&nbsp;in&nbsp;ARGS.&nbsp;Additional&nbsp;CHARS&nbsp;and&nbsp;tags&nbsp;can&nbsp;follow&nbsp;in&nbsp;ARGS.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_gravity"><strong>mark_gravity</strong></a>(self, markName, direction<font color="#909090">=None</font>)</dt><dd><tt>Change&nbsp;the&nbsp;gravity&nbsp;of&nbsp;a&nbsp;mark&nbsp;MARKNAME&nbsp;to&nbsp;DIRECTION&nbsp;(LEFT&nbsp;or&nbsp;RIGHT).<br>
+Return&nbsp;the&nbsp;current&nbsp;value&nbsp;if&nbsp;None&nbsp;is&nbsp;given&nbsp;for&nbsp;DIRECTION.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_names"><strong>mark_names</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;mark&nbsp;names.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_next"><strong>mark_next</strong></a>(self, index)</dt><dd><tt>Return&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;next&nbsp;mark&nbsp;after&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_previous"><strong>mark_previous</strong></a>(self, index)</dt><dd><tt>Return&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;previous&nbsp;mark&nbsp;before&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_set"><strong>mark_set</strong></a>(self, markName, index)</dt><dd><tt>Set&nbsp;mark&nbsp;MARKNAME&nbsp;before&nbsp;the&nbsp;character&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mark_unset"><strong>mark_unset</strong></a>(self, *markNames)</dt><dd><tt>Delete&nbsp;all&nbsp;marks&nbsp;in&nbsp;MARKNAMES.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-scan_dragto"><strong>scan_dragto</strong></a>(self, x, y)</dt><dd><tt>Adjust&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;text&nbsp;to&nbsp;10&nbsp;times&nbsp;the<br>
+difference&nbsp;between&nbsp;X&nbsp;and&nbsp;Y&nbsp;and&nbsp;the&nbsp;coordinates&nbsp;given&nbsp;in<br>
+scan_mark.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-scan_mark"><strong>scan_mark</strong></a>(self, x, y)</dt><dd><tt>Remember&nbsp;the&nbsp;current&nbsp;X,&nbsp;Y&nbsp;coordinates.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-search"><strong>search</strong></a>(self, pattern, index, stopindex<font color="#909090">=None</font>, forwards<font color="#909090">=None</font>, backwards<font color="#909090">=None</font>, exact<font color="#909090">=None</font>, regexp<font color="#909090">=None</font>, nocase<font color="#909090">=None</font>, count<font color="#909090">=None</font>, elide<font color="#909090">=None</font>)</dt><dd><tt>Search&nbsp;PATTERN&nbsp;beginning&nbsp;from&nbsp;INDEX&nbsp;until&nbsp;STOPINDEX.<br>
+Return&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;a&nbsp;match&nbsp;or&nbsp;an<br>
+empty&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-see"><strong>see</strong></a>(self, index)</dt><dd><tt>Scroll&nbsp;such&nbsp;that&nbsp;the&nbsp;character&nbsp;at&nbsp;INDEX&nbsp;is&nbsp;visible.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_add"><strong>tag_add</strong></a>(self, tagName, index1, *args)</dt><dd><tt>Add&nbsp;tag&nbsp;TAGNAME&nbsp;to&nbsp;all&nbsp;characters&nbsp;between&nbsp;INDEX1&nbsp;and&nbsp;index2&nbsp;in&nbsp;ARGS.<br>
+Additional&nbsp;pairs&nbsp;of&nbsp;indices&nbsp;may&nbsp;follow&nbsp;in&nbsp;ARGS.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_bind"><strong>tag_bind</strong></a>(self, tagName, sequence, func, add<font color="#909090">=None</font>)</dt><dd><tt>Bind&nbsp;to&nbsp;all&nbsp;characters&nbsp;with&nbsp;TAGNAME&nbsp;at&nbsp;event&nbsp;SEQUENCE&nbsp;a&nbsp;call&nbsp;to&nbsp;function&nbsp;FUNC.<br>
+&nbsp;<br>
+An&nbsp;additional&nbsp;boolean&nbsp;parameter&nbsp;ADD&nbsp;specifies&nbsp;whether&nbsp;FUNC&nbsp;will&nbsp;be<br>
+called&nbsp;additionally&nbsp;to&nbsp;the&nbsp;other&nbsp;bound&nbsp;function&nbsp;or&nbsp;whether&nbsp;it&nbsp;will<br>
+replace&nbsp;the&nbsp;previous&nbsp;function.&nbsp;See&nbsp;bind&nbsp;for&nbsp;the&nbsp;return&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_cget"><strong>tag_cget</strong></a>(self, tagName, option)</dt><dd><tt>Return&nbsp;the&nbsp;value&nbsp;of&nbsp;OPTION&nbsp;for&nbsp;tag&nbsp;TAGNAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_config"><strong>tag_config</strong></a> = tag_configure(self, tagName, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;a&nbsp;tag&nbsp;TAGNAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_configure"><strong>tag_configure</strong></a>(self, tagName, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;a&nbsp;tag&nbsp;TAGNAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_delete"><strong>tag_delete</strong></a>(self, *tagNames)</dt><dd><tt>Delete&nbsp;all&nbsp;tags&nbsp;in&nbsp;TAGNAMES.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_lower"><strong>tag_lower</strong></a>(self, tagName, belowThis<font color="#909090">=None</font>)</dt><dd><tt>Change&nbsp;the&nbsp;priority&nbsp;of&nbsp;tag&nbsp;TAGNAME&nbsp;such&nbsp;that&nbsp;it&nbsp;is&nbsp;lower<br>
+than&nbsp;the&nbsp;priority&nbsp;of&nbsp;BELOWTHIS.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_names"><strong>tag_names</strong></a>(self, index<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;tag&nbsp;names.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_nextrange"><strong>tag_nextrange</strong></a>(self, tagName, index1, index2<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;start&nbsp;and&nbsp;end&nbsp;index&nbsp;for&nbsp;the&nbsp;first&nbsp;sequence&nbsp;of<br>
+characters&nbsp;between&nbsp;INDEX1&nbsp;and&nbsp;INDEX2&nbsp;which&nbsp;all&nbsp;have&nbsp;tag&nbsp;TAGNAME.<br>
+The&nbsp;text&nbsp;is&nbsp;searched&nbsp;forward&nbsp;from&nbsp;INDEX1.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_prevrange"><strong>tag_prevrange</strong></a>(self, tagName, index1, index2<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;start&nbsp;and&nbsp;end&nbsp;index&nbsp;for&nbsp;the&nbsp;first&nbsp;sequence&nbsp;of<br>
+characters&nbsp;between&nbsp;INDEX1&nbsp;and&nbsp;INDEX2&nbsp;which&nbsp;all&nbsp;have&nbsp;tag&nbsp;TAGNAME.<br>
+The&nbsp;text&nbsp;is&nbsp;searched&nbsp;backwards&nbsp;from&nbsp;INDEX1.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_raise"><strong>tag_raise</strong></a>(self, tagName, aboveThis<font color="#909090">=None</font>)</dt><dd><tt>Change&nbsp;the&nbsp;priority&nbsp;of&nbsp;tag&nbsp;TAGNAME&nbsp;such&nbsp;that&nbsp;it&nbsp;is&nbsp;higher<br>
+than&nbsp;the&nbsp;priority&nbsp;of&nbsp;ABOVETHIS.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_ranges"><strong>tag_ranges</strong></a>(self, tagName)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;ranges&nbsp;of&nbsp;text&nbsp;which&nbsp;have&nbsp;tag&nbsp;TAGNAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_remove"><strong>tag_remove</strong></a>(self, tagName, index1, index2<font color="#909090">=None</font>)</dt><dd><tt>Remove&nbsp;tag&nbsp;TAGNAME&nbsp;from&nbsp;all&nbsp;characters&nbsp;between&nbsp;INDEX1&nbsp;and&nbsp;INDEX2.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tag_unbind"><strong>tag_unbind</strong></a>(self, tagName, sequence, funcid<font color="#909090">=None</font>)</dt><dd><tt>Unbind&nbsp;for&nbsp;all&nbsp;characters&nbsp;with&nbsp;TAGNAME&nbsp;for&nbsp;event&nbsp;SEQUENCE&nbsp;&nbsp;the<br>
+function&nbsp;identified&nbsp;with&nbsp;FUNCID.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_textBackspace"><strong>tk_textBackspace</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TextCin-tk_textIndexCloser"><strong>tk_textIndexCloser</strong></a>(self, a, b, c)</dt></dl>
+
+<dl><dt><a name="TextCin-tk_textResetAnchor"><strong>tk_textResetAnchor</strong></a>(self, index)</dt></dl>
+
+<dl><dt><a name="TextCin-tk_textSelectTo"><strong>tk_textSelectTo</strong></a>(self, index)</dt></dl>
+
+<dl><dt><a name="TextCin-window_cget"><strong>window_cget</strong></a>(self, index, option)</dt><dd><tt>Return&nbsp;the&nbsp;value&nbsp;of&nbsp;OPTION&nbsp;of&nbsp;an&nbsp;embedded&nbsp;window&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-window_config"><strong>window_config</strong></a> = window_configure(self, index, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;an&nbsp;embedded&nbsp;window&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-window_configure"><strong>window_configure</strong></a>(self, index, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;an&nbsp;embedded&nbsp;window&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-window_create"><strong>window_create</strong></a>(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Create&nbsp;a&nbsp;window&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-window_names"><strong>window_names</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;names&nbsp;of&nbsp;embedded&nbsp;windows&nbsp;in&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-yview_pickplace"><strong>yview_pickplace</strong></a>(self, *what)</dt><dd><tt>Obsolete&nbsp;function,&nbsp;use&nbsp;see.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#BaseWidget">Tkinter.BaseWidget</a>:<br>
+<dl><dt><a name="TextCin-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Destroy&nbsp;this&nbsp;and&nbsp;all&nbsp;descendants&nbsp;widgets.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#Misc">Tkinter.Misc</a>:<br>
+<dl><dt><a name="TextCin-__contains__"><strong>__contains__</strong></a>(self, key)</dt></dl>
+
+<dl><dt><a name="TextCin-__getitem__"><strong>__getitem__</strong></a> = cget(self, key)</dt><dd><tt>Return&nbsp;the&nbsp;resource&nbsp;value&nbsp;for&nbsp;a&nbsp;KEY&nbsp;given&nbsp;as&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-__setitem__"><strong>__setitem__</strong></a>(self, key, value)</dt></dl>
+
+<dl><dt><a name="TextCin-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;window&nbsp;path&nbsp;name&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-after"><strong>after</strong></a>(self, ms, func<font color="#909090">=None</font>, *args)</dt><dd><tt>Call&nbsp;function&nbsp;once&nbsp;after&nbsp;given&nbsp;time.<br>
+&nbsp;<br>
+MS&nbsp;specifies&nbsp;the&nbsp;time&nbsp;in&nbsp;milliseconds.&nbsp;FUNC&nbsp;gives&nbsp;the<br>
+function&nbsp;which&nbsp;shall&nbsp;be&nbsp;called.&nbsp;Additional&nbsp;parameters<br>
+are&nbsp;given&nbsp;as&nbsp;parameters&nbsp;to&nbsp;the&nbsp;function&nbsp;call.&nbsp;&nbsp;Return<br>
+identifier&nbsp;to&nbsp;cancel&nbsp;scheduling&nbsp;with&nbsp;after_cancel.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-after_cancel"><strong>after_cancel</strong></a>(self, id)</dt><dd><tt>Cancel&nbsp;scheduling&nbsp;of&nbsp;function&nbsp;identified&nbsp;with&nbsp;ID.<br>
+&nbsp;<br>
+Identifier&nbsp;returned&nbsp;by&nbsp;after&nbsp;or&nbsp;after_idle&nbsp;must&nbsp;be<br>
+given&nbsp;as&nbsp;first&nbsp;parameter.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-after_idle"><strong>after_idle</strong></a>(self, func, *args)</dt><dd><tt>Call&nbsp;FUNC&nbsp;once&nbsp;if&nbsp;the&nbsp;Tcl&nbsp;main&nbsp;loop&nbsp;has&nbsp;no&nbsp;event&nbsp;to<br>
+process.<br>
+&nbsp;<br>
+Return&nbsp;an&nbsp;identifier&nbsp;to&nbsp;cancel&nbsp;the&nbsp;scheduling&nbsp;with<br>
+after_cancel.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-bell"><strong>bell</strong></a>(self, displayof<font color="#909090">=0</font>)</dt><dd><tt>Ring&nbsp;a&nbsp;display's&nbsp;bell.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-bind"><strong>bind</strong></a>(self, sequence<font color="#909090">=None</font>, func<font color="#909090">=None</font>, add<font color="#909090">=None</font>)</dt><dd><tt>Bind&nbsp;to&nbsp;this&nbsp;widget&nbsp;at&nbsp;event&nbsp;SEQUENCE&nbsp;a&nbsp;call&nbsp;to&nbsp;function&nbsp;FUNC.<br>
+&nbsp;<br>
+SEQUENCE&nbsp;is&nbsp;a&nbsp;string&nbsp;of&nbsp;concatenated&nbsp;event<br>
+patterns.&nbsp;An&nbsp;event&nbsp;pattern&nbsp;is&nbsp;of&nbsp;the&nbsp;form<br>
+&lt;MODIFIER-MODIFIER-TYPE-DETAIL&gt;&nbsp;where&nbsp;MODIFIER&nbsp;is&nbsp;one<br>
+of&nbsp;Control,&nbsp;Mod2,&nbsp;M2,&nbsp;Shift,&nbsp;Mod3,&nbsp;M3,&nbsp;Lock,&nbsp;Mod4,&nbsp;M4,<br>
+Button1,&nbsp;B1,&nbsp;Mod5,&nbsp;M5&nbsp;Button2,&nbsp;B2,&nbsp;Meta,&nbsp;M,&nbsp;Button3,<br>
+B3,&nbsp;Alt,&nbsp;Button4,&nbsp;B4,&nbsp;Double,&nbsp;Button5,&nbsp;B5&nbsp;Triple,<br>
+Mod1,&nbsp;M1.&nbsp;TYPE&nbsp;is&nbsp;one&nbsp;of&nbsp;Activate,&nbsp;Enter,&nbsp;Map,<br>
+ButtonPress,&nbsp;Button,&nbsp;Expose,&nbsp;Motion,&nbsp;ButtonRelease<br>
+FocusIn,&nbsp;MouseWheel,&nbsp;Circulate,&nbsp;FocusOut,&nbsp;Property,<br>
+Colormap,&nbsp;Gravity&nbsp;Reparent,&nbsp;Configure,&nbsp;KeyPress,&nbsp;Key,<br>
+Unmap,&nbsp;Deactivate,&nbsp;KeyRelease&nbsp;Visibility,&nbsp;Destroy,<br>
+Leave&nbsp;and&nbsp;DETAIL&nbsp;is&nbsp;the&nbsp;button&nbsp;number&nbsp;for&nbsp;ButtonPress,<br>
+ButtonRelease&nbsp;and&nbsp;DETAIL&nbsp;is&nbsp;the&nbsp;Keysym&nbsp;for&nbsp;KeyPress&nbsp;and<br>
+KeyRelease.&nbsp;Examples&nbsp;are<br>
+&lt;Control-Button-1&gt;&nbsp;for&nbsp;pressing&nbsp;Control&nbsp;and&nbsp;mouse&nbsp;button&nbsp;1&nbsp;or<br>
+&lt;Alt-A&gt;&nbsp;for&nbsp;pressing&nbsp;A&nbsp;and&nbsp;the&nbsp;Alt&nbsp;key&nbsp;(KeyPress&nbsp;can&nbsp;be&nbsp;omitted).<br>
+An&nbsp;event&nbsp;pattern&nbsp;can&nbsp;also&nbsp;be&nbsp;a&nbsp;virtual&nbsp;event&nbsp;of&nbsp;the&nbsp;form<br>
+&lt;&lt;AString&gt;&gt;&nbsp;where&nbsp;AString&nbsp;can&nbsp;be&nbsp;arbitrary.&nbsp;This<br>
+event&nbsp;can&nbsp;be&nbsp;generated&nbsp;by&nbsp;event_generate.<br>
+If&nbsp;events&nbsp;are&nbsp;concatenated&nbsp;they&nbsp;must&nbsp;appear&nbsp;shortly<br>
+after&nbsp;each&nbsp;other.<br>
+&nbsp;<br>
+FUNC&nbsp;will&nbsp;be&nbsp;called&nbsp;if&nbsp;the&nbsp;event&nbsp;sequence&nbsp;occurs&nbsp;with&nbsp;an<br>
+instance&nbsp;of&nbsp;Event&nbsp;as&nbsp;argument.&nbsp;If&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;FUNC&nbsp;is<br>
+"break"&nbsp;no&nbsp;further&nbsp;bound&nbsp;function&nbsp;is&nbsp;invoked.<br>
+&nbsp;<br>
+An&nbsp;additional&nbsp;boolean&nbsp;parameter&nbsp;ADD&nbsp;specifies&nbsp;whether&nbsp;FUNC&nbsp;will<br>
+be&nbsp;called&nbsp;additionally&nbsp;to&nbsp;the&nbsp;other&nbsp;bound&nbsp;function&nbsp;or&nbsp;whether<br>
+it&nbsp;will&nbsp;replace&nbsp;the&nbsp;previous&nbsp;function.<br>
+&nbsp;<br>
+Bind&nbsp;will&nbsp;return&nbsp;an&nbsp;identifier&nbsp;to&nbsp;allow&nbsp;deletion&nbsp;of&nbsp;the&nbsp;bound&nbsp;function&nbsp;with<br>
+unbind&nbsp;without&nbsp;memory&nbsp;leak.<br>
+&nbsp;<br>
+If&nbsp;FUNC&nbsp;or&nbsp;SEQUENCE&nbsp;is&nbsp;omitted&nbsp;the&nbsp;bound&nbsp;function&nbsp;or&nbsp;list<br>
+of&nbsp;bound&nbsp;events&nbsp;are&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-bind_all"><strong>bind_all</strong></a>(self, sequence<font color="#909090">=None</font>, func<font color="#909090">=None</font>, add<font color="#909090">=None</font>)</dt><dd><tt>Bind&nbsp;to&nbsp;all&nbsp;widgets&nbsp;at&nbsp;an&nbsp;event&nbsp;SEQUENCE&nbsp;a&nbsp;call&nbsp;to&nbsp;function&nbsp;FUNC.<br>
+An&nbsp;additional&nbsp;boolean&nbsp;parameter&nbsp;ADD&nbsp;specifies&nbsp;whether&nbsp;FUNC&nbsp;will<br>
+be&nbsp;called&nbsp;additionally&nbsp;to&nbsp;the&nbsp;other&nbsp;bound&nbsp;function&nbsp;or&nbsp;whether<br>
+it&nbsp;will&nbsp;replace&nbsp;the&nbsp;previous&nbsp;function.&nbsp;See&nbsp;bind&nbsp;for&nbsp;the&nbsp;return&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-bind_class"><strong>bind_class</strong></a>(self, className, sequence<font color="#909090">=None</font>, func<font color="#909090">=None</font>, add<font color="#909090">=None</font>)</dt><dd><tt>Bind&nbsp;to&nbsp;widgets&nbsp;with&nbsp;bindtag&nbsp;CLASSNAME&nbsp;at&nbsp;event<br>
+SEQUENCE&nbsp;a&nbsp;call&nbsp;of&nbsp;function&nbsp;FUNC.&nbsp;An&nbsp;additional<br>
+boolean&nbsp;parameter&nbsp;ADD&nbsp;specifies&nbsp;whether&nbsp;FUNC&nbsp;will&nbsp;be<br>
+called&nbsp;additionally&nbsp;to&nbsp;the&nbsp;other&nbsp;bound&nbsp;function&nbsp;or<br>
+whether&nbsp;it&nbsp;will&nbsp;replace&nbsp;the&nbsp;previous&nbsp;function.&nbsp;See&nbsp;bind&nbsp;for<br>
+the&nbsp;return&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-bindtags"><strong>bindtags</strong></a>(self, tagList<font color="#909090">=None</font>)</dt><dd><tt>Set&nbsp;or&nbsp;get&nbsp;the&nbsp;list&nbsp;of&nbsp;bindtags&nbsp;for&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+With&nbsp;no&nbsp;argument&nbsp;return&nbsp;the&nbsp;list&nbsp;of&nbsp;all&nbsp;bindtags&nbsp;associated&nbsp;with<br>
+this&nbsp;widget.&nbsp;With&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;as&nbsp;argument&nbsp;the&nbsp;bindtags&nbsp;are<br>
+set&nbsp;to&nbsp;this&nbsp;list.&nbsp;The&nbsp;bindtags&nbsp;determine&nbsp;in&nbsp;which&nbsp;order&nbsp;events&nbsp;are<br>
+processed&nbsp;(see&nbsp;bind).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-cget"><strong>cget</strong></a>(self, key)</dt><dd><tt>Return&nbsp;the&nbsp;resource&nbsp;value&nbsp;for&nbsp;a&nbsp;KEY&nbsp;given&nbsp;as&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-clipboard_append"><strong>clipboard_append</strong></a>(self, string, **kw)</dt><dd><tt>Append&nbsp;STRING&nbsp;to&nbsp;the&nbsp;Tk&nbsp;clipboard.<br>
+&nbsp;<br>
+A&nbsp;widget&nbsp;specified&nbsp;at&nbsp;the&nbsp;optional&nbsp;displayof&nbsp;keyword<br>
+argument&nbsp;specifies&nbsp;the&nbsp;target&nbsp;display.&nbsp;The&nbsp;clipboard<br>
+can&nbsp;be&nbsp;retrieved&nbsp;with&nbsp;selection_get.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-clipboard_clear"><strong>clipboard_clear</strong></a>(self, **kw)</dt><dd><tt>Clear&nbsp;the&nbsp;data&nbsp;in&nbsp;the&nbsp;Tk&nbsp;clipboard.<br>
+&nbsp;<br>
+A&nbsp;widget&nbsp;specified&nbsp;for&nbsp;the&nbsp;optional&nbsp;displayof&nbsp;keyword<br>
+argument&nbsp;specifies&nbsp;the&nbsp;target&nbsp;display.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-clipboard_get"><strong>clipboard_get</strong></a>(self, **kw)</dt><dd><tt>Retrieve&nbsp;data&nbsp;from&nbsp;the&nbsp;clipboard&nbsp;on&nbsp;window's&nbsp;display.<br>
+&nbsp;<br>
+The&nbsp;window&nbsp;keyword&nbsp;defaults&nbsp;to&nbsp;the&nbsp;root&nbsp;window&nbsp;of&nbsp;the&nbsp;Tkinter<br>
+application.<br>
+&nbsp;<br>
+The&nbsp;type&nbsp;keyword&nbsp;specifies&nbsp;the&nbsp;form&nbsp;in&nbsp;which&nbsp;the&nbsp;data&nbsp;is<br>
+to&nbsp;be&nbsp;returned&nbsp;and&nbsp;should&nbsp;be&nbsp;an&nbsp;atom&nbsp;name&nbsp;such&nbsp;as&nbsp;STRING<br>
+or&nbsp;FILE_NAME.&nbsp;&nbsp;Type&nbsp;defaults&nbsp;to&nbsp;STRING,&nbsp;except&nbsp;on&nbsp;X11,&nbsp;where&nbsp;the&nbsp;default<br>
+is&nbsp;to&nbsp;try&nbsp;UTF8_STRING&nbsp;and&nbsp;fall&nbsp;back&nbsp;to&nbsp;STRING.<br>
+&nbsp;<br>
+This&nbsp;command&nbsp;is&nbsp;equivalent&nbsp;to:<br>
+&nbsp;<br>
+<a href="#TextCin-selection_get">selection_get</a>(CLIPBOARD)</tt></dd></dl>
+
+<dl><dt><a name="TextCin-colormodel"><strong>colormodel</strong></a>(self, value<font color="#909090">=None</font>)</dt><dd><tt>Useless.&nbsp;Not&nbsp;implemented&nbsp;in&nbsp;Tk.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-columnconfigure"><strong>columnconfigure</strong></a> = grid_columnconfigure(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Configure&nbsp;column&nbsp;INDEX&nbsp;of&nbsp;a&nbsp;grid.<br>
+&nbsp;<br>
+Valid&nbsp;resources&nbsp;are&nbsp;minsize&nbsp;(minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;column),<br>
+weight&nbsp;(how&nbsp;much&nbsp;does&nbsp;additional&nbsp;space&nbsp;propagate&nbsp;to&nbsp;this&nbsp;column)<br>
+and&nbsp;pad&nbsp;(how&nbsp;much&nbsp;space&nbsp;to&nbsp;let&nbsp;additionally).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-config"><strong>config</strong></a> = configure(self, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;resources&nbsp;of&nbsp;a&nbsp;widget.<br>
+&nbsp;<br>
+The&nbsp;values&nbsp;for&nbsp;resources&nbsp;are&nbsp;specified&nbsp;as&nbsp;keyword<br>
+arguments.&nbsp;To&nbsp;get&nbsp;an&nbsp;overview&nbsp;about<br>
+the&nbsp;allowed&nbsp;keyword&nbsp;arguments&nbsp;call&nbsp;the&nbsp;method&nbsp;keys.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-configure"><strong>configure</strong></a>(self, cnf<font color="#909090">=None</font>, **kw)</dt><dd><tt>Configure&nbsp;resources&nbsp;of&nbsp;a&nbsp;widget.<br>
+&nbsp;<br>
+The&nbsp;values&nbsp;for&nbsp;resources&nbsp;are&nbsp;specified&nbsp;as&nbsp;keyword<br>
+arguments.&nbsp;To&nbsp;get&nbsp;an&nbsp;overview&nbsp;about<br>
+the&nbsp;allowed&nbsp;keyword&nbsp;arguments&nbsp;call&nbsp;the&nbsp;method&nbsp;keys.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-deletecommand"><strong>deletecommand</strong></a>(self, name)</dt><dd><tt>Internal&nbsp;function.<br>
+&nbsp;<br>
+Delete&nbsp;the&nbsp;Tcl&nbsp;command&nbsp;provided&nbsp;in&nbsp;NAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-event_add"><strong>event_add</strong></a>(self, virtual, *sequences)</dt><dd><tt>Bind&nbsp;a&nbsp;virtual&nbsp;event&nbsp;VIRTUAL&nbsp;(of&nbsp;the&nbsp;form&nbsp;&lt;&lt;Name&gt;&gt;)<br>
+to&nbsp;an&nbsp;event&nbsp;SEQUENCE&nbsp;such&nbsp;that&nbsp;the&nbsp;virtual&nbsp;event&nbsp;is&nbsp;triggered<br>
+whenever&nbsp;SEQUENCE&nbsp;occurs.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-event_delete"><strong>event_delete</strong></a>(self, virtual, *sequences)</dt><dd><tt>Unbind&nbsp;a&nbsp;virtual&nbsp;event&nbsp;VIRTUAL&nbsp;from&nbsp;SEQUENCE.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-event_generate"><strong>event_generate</strong></a>(self, sequence, **kw)</dt><dd><tt>Generate&nbsp;an&nbsp;event&nbsp;SEQUENCE.&nbsp;Additional<br>
+keyword&nbsp;arguments&nbsp;specify&nbsp;parameter&nbsp;of&nbsp;the&nbsp;event<br>
+(e.g.&nbsp;x,&nbsp;y,&nbsp;rootx,&nbsp;rooty).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-event_info"><strong>event_info</strong></a>(self, virtual<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;virtual&nbsp;events&nbsp;or&nbsp;the&nbsp;information<br>
+about&nbsp;the&nbsp;SEQUENCE&nbsp;bound&nbsp;to&nbsp;the&nbsp;virtual&nbsp;event&nbsp;VIRTUAL.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus"><strong>focus</strong></a> = focus_set(self)</dt><dd><tt>Direct&nbsp;input&nbsp;focus&nbsp;to&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;application&nbsp;currently&nbsp;does&nbsp;not&nbsp;have&nbsp;the&nbsp;focus<br>
+this&nbsp;widget&nbsp;will&nbsp;get&nbsp;the&nbsp;focus&nbsp;if&nbsp;the&nbsp;application&nbsp;gets<br>
+the&nbsp;focus&nbsp;through&nbsp;the&nbsp;window&nbsp;manager.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus_displayof"><strong>focus_displayof</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;widget&nbsp;which&nbsp;has&nbsp;currently&nbsp;the&nbsp;focus&nbsp;on&nbsp;the<br>
+display&nbsp;where&nbsp;this&nbsp;widget&nbsp;is&nbsp;located.<br>
+&nbsp;<br>
+Return&nbsp;None&nbsp;if&nbsp;the&nbsp;application&nbsp;does&nbsp;not&nbsp;have&nbsp;the&nbsp;focus.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus_force"><strong>focus_force</strong></a>(self)</dt><dd><tt>Direct&nbsp;input&nbsp;focus&nbsp;to&nbsp;this&nbsp;widget&nbsp;even&nbsp;if&nbsp;the<br>
+application&nbsp;does&nbsp;not&nbsp;have&nbsp;the&nbsp;focus.&nbsp;Use&nbsp;with<br>
+caution!</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus_get"><strong>focus_get</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;widget&nbsp;which&nbsp;has&nbsp;currently&nbsp;the&nbsp;focus&nbsp;in&nbsp;the<br>
+application.<br>
+&nbsp;<br>
+Use&nbsp;focus_displayof&nbsp;to&nbsp;allow&nbsp;working&nbsp;with&nbsp;several<br>
+displays.&nbsp;Return&nbsp;None&nbsp;if&nbsp;application&nbsp;does&nbsp;not&nbsp;have<br>
+the&nbsp;focus.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus_lastfor"><strong>focus_lastfor</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;widget&nbsp;which&nbsp;would&nbsp;have&nbsp;the&nbsp;focus&nbsp;if&nbsp;top&nbsp;level<br>
+for&nbsp;this&nbsp;widget&nbsp;gets&nbsp;the&nbsp;focus&nbsp;from&nbsp;the&nbsp;window&nbsp;manager.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-focus_set"><strong>focus_set</strong></a>(self)</dt><dd><tt>Direct&nbsp;input&nbsp;focus&nbsp;to&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;application&nbsp;currently&nbsp;does&nbsp;not&nbsp;have&nbsp;the&nbsp;focus<br>
+this&nbsp;widget&nbsp;will&nbsp;get&nbsp;the&nbsp;focus&nbsp;if&nbsp;the&nbsp;application&nbsp;gets<br>
+the&nbsp;focus&nbsp;through&nbsp;the&nbsp;window&nbsp;manager.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-getboolean"><strong>getboolean</strong></a>(self, s)</dt><dd><tt>Return&nbsp;a&nbsp;boolean&nbsp;value&nbsp;for&nbsp;Tcl&nbsp;boolean&nbsp;values&nbsp;true&nbsp;and&nbsp;false&nbsp;given&nbsp;as&nbsp;parameter.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-getvar"><strong>getvar</strong></a>(self, name<font color="#909090">='PY_VAR'</font>)</dt><dd><tt>Return&nbsp;value&nbsp;of&nbsp;Tcl&nbsp;variable&nbsp;NAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grab_current"><strong>grab_current</strong></a>(self)</dt><dd><tt>Return&nbsp;widget&nbsp;which&nbsp;has&nbsp;currently&nbsp;the&nbsp;grab&nbsp;in&nbsp;this&nbsp;application<br>
+or&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grab_release"><strong>grab_release</strong></a>(self)</dt><dd><tt>Release&nbsp;grab&nbsp;for&nbsp;this&nbsp;widget&nbsp;if&nbsp;currently&nbsp;set.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grab_set"><strong>grab_set</strong></a>(self)</dt><dd><tt>Set&nbsp;grab&nbsp;for&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+A&nbsp;grab&nbsp;directs&nbsp;all&nbsp;events&nbsp;to&nbsp;this&nbsp;and&nbsp;descendant<br>
+widgets&nbsp;in&nbsp;the&nbsp;application.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grab_set_global"><strong>grab_set_global</strong></a>(self)</dt><dd><tt>Set&nbsp;global&nbsp;grab&nbsp;for&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+A&nbsp;global&nbsp;grab&nbsp;directs&nbsp;all&nbsp;events&nbsp;to&nbsp;this&nbsp;and<br>
+descendant&nbsp;widgets&nbsp;on&nbsp;the&nbsp;display.&nbsp;Use&nbsp;with&nbsp;caution&nbsp;-<br>
+other&nbsp;applications&nbsp;do&nbsp;not&nbsp;get&nbsp;events&nbsp;anymore.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grab_status"><strong>grab_status</strong></a>(self)</dt><dd><tt>Return&nbsp;None,&nbsp;"local"&nbsp;or&nbsp;"global"&nbsp;if&nbsp;this&nbsp;widget&nbsp;has<br>
+no,&nbsp;a&nbsp;local&nbsp;or&nbsp;a&nbsp;global&nbsp;grab.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_bbox"><strong>grid_bbox</strong></a>(self, column<font color="#909090">=None</font>, row<font color="#909090">=None</font>, col2<font color="#909090">=None</font>, row2<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;integer&nbsp;coordinates&nbsp;for&nbsp;the&nbsp;bounding<br>
+box&nbsp;of&nbsp;this&nbsp;widget&nbsp;controlled&nbsp;by&nbsp;the&nbsp;geometry&nbsp;manager&nbsp;grid.<br>
+&nbsp;<br>
+If&nbsp;COLUMN,&nbsp;ROW&nbsp;is&nbsp;given&nbsp;the&nbsp;bounding&nbsp;box&nbsp;applies&nbsp;from<br>
+the&nbsp;cell&nbsp;with&nbsp;row&nbsp;and&nbsp;column&nbsp;0&nbsp;to&nbsp;the&nbsp;specified<br>
+cell.&nbsp;If&nbsp;COL2&nbsp;and&nbsp;ROW2&nbsp;are&nbsp;given&nbsp;the&nbsp;bounding&nbsp;box<br>
+starts&nbsp;at&nbsp;that&nbsp;cell.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;integers&nbsp;specify&nbsp;the&nbsp;offset&nbsp;of&nbsp;the&nbsp;upper&nbsp;left<br>
+corner&nbsp;in&nbsp;the&nbsp;master&nbsp;widget&nbsp;and&nbsp;the&nbsp;width&nbsp;and&nbsp;height.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_columnconfigure"><strong>grid_columnconfigure</strong></a>(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Configure&nbsp;column&nbsp;INDEX&nbsp;of&nbsp;a&nbsp;grid.<br>
+&nbsp;<br>
+Valid&nbsp;resources&nbsp;are&nbsp;minsize&nbsp;(minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;column),<br>
+weight&nbsp;(how&nbsp;much&nbsp;does&nbsp;additional&nbsp;space&nbsp;propagate&nbsp;to&nbsp;this&nbsp;column)<br>
+and&nbsp;pad&nbsp;(how&nbsp;much&nbsp;space&nbsp;to&nbsp;let&nbsp;additionally).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_location"><strong>grid_location</strong></a>(self, x, y)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;column&nbsp;and&nbsp;row&nbsp;which&nbsp;identify&nbsp;the&nbsp;cell<br>
+at&nbsp;which&nbsp;the&nbsp;pixel&nbsp;at&nbsp;position&nbsp;X&nbsp;and&nbsp;Y&nbsp;inside&nbsp;the&nbsp;master<br>
+widget&nbsp;is&nbsp;located.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_propagate"><strong>grid_propagate</strong></a>(self, flag<font color="#909090">=['_noarg_']</font>)</dt><dd><tt>Set&nbsp;or&nbsp;get&nbsp;the&nbsp;status&nbsp;for&nbsp;propagation&nbsp;of&nbsp;geometry&nbsp;information.<br>
+&nbsp;<br>
+A&nbsp;boolean&nbsp;argument&nbsp;specifies&nbsp;whether&nbsp;the&nbsp;geometry&nbsp;information<br>
+of&nbsp;the&nbsp;slaves&nbsp;will&nbsp;determine&nbsp;the&nbsp;size&nbsp;of&nbsp;this&nbsp;widget.&nbsp;If&nbsp;no&nbsp;argument<br>
+is&nbsp;given,&nbsp;the&nbsp;current&nbsp;setting&nbsp;will&nbsp;be&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_rowconfigure"><strong>grid_rowconfigure</strong></a>(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Configure&nbsp;row&nbsp;INDEX&nbsp;of&nbsp;a&nbsp;grid.<br>
+&nbsp;<br>
+Valid&nbsp;resources&nbsp;are&nbsp;minsize&nbsp;(minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;row),<br>
+weight&nbsp;(how&nbsp;much&nbsp;does&nbsp;additional&nbsp;space&nbsp;propagate&nbsp;to&nbsp;this&nbsp;row)<br>
+and&nbsp;pad&nbsp;(how&nbsp;much&nbsp;space&nbsp;to&nbsp;let&nbsp;additionally).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_size"><strong>grid_size</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;the&nbsp;number&nbsp;of&nbsp;column&nbsp;and&nbsp;rows&nbsp;in&nbsp;the&nbsp;grid.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_slaves"><strong>grid_slaves</strong></a>(self, row<font color="#909090">=None</font>, column<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;slaves&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;its&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-image_types"><strong>image_types</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;available&nbsp;image&nbsp;types&nbsp;(e.g.&nbsp;phote&nbsp;bitmap).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-keys"><strong>keys</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;resource&nbsp;names&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-lift"><strong>lift</strong></a> = tkraise(self, aboveThis<font color="#909090">=None</font>)</dt><dd><tt>Raise&nbsp;this&nbsp;widget&nbsp;in&nbsp;the&nbsp;stacking&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-lower"><strong>lower</strong></a>(self, belowThis<font color="#909090">=None</font>)</dt><dd><tt>Lower&nbsp;this&nbsp;widget&nbsp;in&nbsp;the&nbsp;stacking&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-mainloop"><strong>mainloop</strong></a>(self, n<font color="#909090">=0</font>)</dt><dd><tt>Call&nbsp;the&nbsp;mainloop&nbsp;of&nbsp;Tk.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-nametowidget"><strong>nametowidget</strong></a>(self, name)</dt><dd><tt>Return&nbsp;the&nbsp;Tkinter&nbsp;instance&nbsp;of&nbsp;a&nbsp;widget&nbsp;identified&nbsp;by<br>
+its&nbsp;Tcl&nbsp;name&nbsp;NAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-option_add"><strong>option_add</strong></a>(self, pattern, value, priority<font color="#909090">=None</font>)</dt><dd><tt>Set&nbsp;a&nbsp;VALUE&nbsp;(second&nbsp;parameter)&nbsp;for&nbsp;an&nbsp;option<br>
+PATTERN&nbsp;(first&nbsp;parameter).<br>
+&nbsp;<br>
+An&nbsp;optional&nbsp;third&nbsp;parameter&nbsp;gives&nbsp;the&nbsp;numeric&nbsp;priority<br>
+(defaults&nbsp;to&nbsp;80).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-option_clear"><strong>option_clear</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;option&nbsp;database.<br>
+&nbsp;<br>
+It&nbsp;will&nbsp;be&nbsp;reloaded&nbsp;if&nbsp;option_add&nbsp;is&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-option_get"><strong>option_get</strong></a>(self, name, className)</dt><dd><tt>Return&nbsp;the&nbsp;value&nbsp;for&nbsp;an&nbsp;option&nbsp;NAME&nbsp;for&nbsp;this&nbsp;widget<br>
+with&nbsp;CLASSNAME.<br>
+&nbsp;<br>
+Values&nbsp;with&nbsp;higher&nbsp;priority&nbsp;override&nbsp;lower&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-option_readfile"><strong>option_readfile</strong></a>(self, fileName, priority<font color="#909090">=None</font>)</dt><dd><tt>Read&nbsp;file&nbsp;FILENAME&nbsp;into&nbsp;the&nbsp;option&nbsp;database.<br>
+&nbsp;<br>
+An&nbsp;optional&nbsp;second&nbsp;parameter&nbsp;gives&nbsp;the&nbsp;numeric<br>
+priority.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack_propagate"><strong>pack_propagate</strong></a>(self, flag<font color="#909090">=['_noarg_']</font>)</dt><dd><tt>Set&nbsp;or&nbsp;get&nbsp;the&nbsp;status&nbsp;for&nbsp;propagation&nbsp;of&nbsp;geometry&nbsp;information.<br>
+&nbsp;<br>
+A&nbsp;boolean&nbsp;argument&nbsp;specifies&nbsp;whether&nbsp;the&nbsp;geometry&nbsp;information<br>
+of&nbsp;the&nbsp;slaves&nbsp;will&nbsp;determine&nbsp;the&nbsp;size&nbsp;of&nbsp;this&nbsp;widget.&nbsp;If&nbsp;no&nbsp;argument<br>
+is&nbsp;given&nbsp;the&nbsp;current&nbsp;setting&nbsp;will&nbsp;be&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack_slaves"><strong>pack_slaves</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;slaves&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;its&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-place_slaves"><strong>place_slaves</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;slaves&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;its&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-propagate"><strong>propagate</strong></a> = pack_propagate(self, flag<font color="#909090">=['_noarg_']</font>)</dt><dd><tt>Set&nbsp;or&nbsp;get&nbsp;the&nbsp;status&nbsp;for&nbsp;propagation&nbsp;of&nbsp;geometry&nbsp;information.<br>
+&nbsp;<br>
+A&nbsp;boolean&nbsp;argument&nbsp;specifies&nbsp;whether&nbsp;the&nbsp;geometry&nbsp;information<br>
+of&nbsp;the&nbsp;slaves&nbsp;will&nbsp;determine&nbsp;the&nbsp;size&nbsp;of&nbsp;this&nbsp;widget.&nbsp;If&nbsp;no&nbsp;argument<br>
+is&nbsp;given&nbsp;the&nbsp;current&nbsp;setting&nbsp;will&nbsp;be&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-quit"><strong>quit</strong></a>(self)</dt><dd><tt>Quit&nbsp;the&nbsp;Tcl&nbsp;interpreter.&nbsp;All&nbsp;widgets&nbsp;will&nbsp;be&nbsp;destroyed.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-register"><strong>register</strong></a> = _register(self, func, subst<font color="#909090">=None</font>, needcleanup<font color="#909090">=1</font>)</dt><dd><tt>Return&nbsp;a&nbsp;newly&nbsp;created&nbsp;Tcl&nbsp;function.&nbsp;If&nbsp;this<br>
+function&nbsp;is&nbsp;called,&nbsp;the&nbsp;Python&nbsp;function&nbsp;FUNC&nbsp;will<br>
+be&nbsp;executed.&nbsp;An&nbsp;optional&nbsp;function&nbsp;SUBST&nbsp;can<br>
+be&nbsp;given&nbsp;which&nbsp;will&nbsp;be&nbsp;executed&nbsp;before&nbsp;FUNC.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-rowconfigure"><strong>rowconfigure</strong></a> = grid_rowconfigure(self, index, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Configure&nbsp;row&nbsp;INDEX&nbsp;of&nbsp;a&nbsp;grid.<br>
+&nbsp;<br>
+Valid&nbsp;resources&nbsp;are&nbsp;minsize&nbsp;(minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;row),<br>
+weight&nbsp;(how&nbsp;much&nbsp;does&nbsp;additional&nbsp;space&nbsp;propagate&nbsp;to&nbsp;this&nbsp;row)<br>
+and&nbsp;pad&nbsp;(how&nbsp;much&nbsp;space&nbsp;to&nbsp;let&nbsp;additionally).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-selection_clear"><strong>selection_clear</strong></a>(self, **kw)</dt><dd><tt>Clear&nbsp;the&nbsp;current&nbsp;X&nbsp;selection.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-selection_get"><strong>selection_get</strong></a>(self, **kw)</dt><dd><tt>Return&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;current&nbsp;X&nbsp;selection.<br>
+&nbsp;<br>
+A&nbsp;keyword&nbsp;parameter&nbsp;selection&nbsp;specifies&nbsp;the&nbsp;name&nbsp;of<br>
+the&nbsp;selection&nbsp;and&nbsp;defaults&nbsp;to&nbsp;PRIMARY.&nbsp;&nbsp;A&nbsp;keyword<br>
+parameter&nbsp;displayof&nbsp;specifies&nbsp;a&nbsp;widget&nbsp;on&nbsp;the&nbsp;display<br>
+to&nbsp;use.&nbsp;A&nbsp;keyword&nbsp;parameter&nbsp;type&nbsp;specifies&nbsp;the&nbsp;form&nbsp;of&nbsp;data&nbsp;to&nbsp;be<br>
+fetched,&nbsp;defaulting&nbsp;to&nbsp;STRING&nbsp;except&nbsp;on&nbsp;X11,&nbsp;where&nbsp;UTF8_STRING&nbsp;is&nbsp;tried<br>
+before&nbsp;STRING.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-selection_handle"><strong>selection_handle</strong></a>(self, command, **kw)</dt><dd><tt>Specify&nbsp;a&nbsp;function&nbsp;COMMAND&nbsp;to&nbsp;call&nbsp;if&nbsp;the&nbsp;X<br>
+selection&nbsp;owned&nbsp;by&nbsp;this&nbsp;widget&nbsp;is&nbsp;queried&nbsp;by&nbsp;another<br>
+application.<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;must&nbsp;return&nbsp;the&nbsp;contents&nbsp;of&nbsp;the<br>
+selection.&nbsp;The&nbsp;function&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;the<br>
+arguments&nbsp;OFFSET&nbsp;and&nbsp;LENGTH&nbsp;which&nbsp;allows&nbsp;the&nbsp;chunking<br>
+of&nbsp;very&nbsp;long&nbsp;selections.&nbsp;The&nbsp;following&nbsp;keyword<br>
+parameters&nbsp;can&nbsp;be&nbsp;provided:<br>
+selection&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;selection&nbsp;(default&nbsp;PRIMARY),<br>
+type&nbsp;-&nbsp;type&nbsp;of&nbsp;the&nbsp;selection&nbsp;(e.g.&nbsp;STRING,&nbsp;FILE_NAME).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-selection_own"><strong>selection_own</strong></a>(self, **kw)</dt><dd><tt>Become&nbsp;owner&nbsp;of&nbsp;X&nbsp;selection.<br>
+&nbsp;<br>
+A&nbsp;keyword&nbsp;parameter&nbsp;selection&nbsp;specifies&nbsp;the&nbsp;name&nbsp;of<br>
+the&nbsp;selection&nbsp;(default&nbsp;PRIMARY).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-selection_own_get"><strong>selection_own_get</strong></a>(self, **kw)</dt><dd><tt>Return&nbsp;owner&nbsp;of&nbsp;X&nbsp;selection.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;keyword&nbsp;parameter&nbsp;can<br>
+be&nbsp;provided:<br>
+selection&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;selection&nbsp;(default&nbsp;PRIMARY),<br>
+type&nbsp;-&nbsp;type&nbsp;of&nbsp;the&nbsp;selection&nbsp;(e.g.&nbsp;STRING,&nbsp;FILE_NAME).</tt></dd></dl>
+
+<dl><dt><a name="TextCin-send"><strong>send</strong></a>(self, interp, cmd, *args)</dt><dd><tt>Send&nbsp;Tcl&nbsp;command&nbsp;CMD&nbsp;to&nbsp;different&nbsp;interpreter&nbsp;INTERP&nbsp;to&nbsp;be&nbsp;executed.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-setvar"><strong>setvar</strong></a>(self, name<font color="#909090">='PY_VAR'</font>, value<font color="#909090">='1'</font>)</dt><dd><tt>Set&nbsp;Tcl&nbsp;variable&nbsp;NAME&nbsp;to&nbsp;VALUE.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-size"><strong>size</strong></a> = grid_size(self)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;the&nbsp;number&nbsp;of&nbsp;column&nbsp;and&nbsp;rows&nbsp;in&nbsp;the&nbsp;grid.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-slaves"><strong>slaves</strong></a> = pack_slaves(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;slaves&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;its&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_bisque"><strong>tk_bisque</strong></a>(self)</dt><dd><tt>Change&nbsp;the&nbsp;color&nbsp;scheme&nbsp;to&nbsp;light&nbsp;brown&nbsp;as&nbsp;used&nbsp;in&nbsp;Tk&nbsp;3.6&nbsp;and&nbsp;before.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_focusFollowsMouse"><strong>tk_focusFollowsMouse</strong></a>(self)</dt><dd><tt>The&nbsp;widget&nbsp;under&nbsp;mouse&nbsp;will&nbsp;get&nbsp;automatically&nbsp;focus.&nbsp;Can&nbsp;not<br>
+be&nbsp;disabled&nbsp;easily.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_focusNext"><strong>tk_focusNext</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;widget&nbsp;in&nbsp;the&nbsp;focus&nbsp;order&nbsp;which&nbsp;follows<br>
+widget&nbsp;which&nbsp;has&nbsp;currently&nbsp;the&nbsp;focus.<br>
+&nbsp;<br>
+The&nbsp;focus&nbsp;order&nbsp;first&nbsp;goes&nbsp;to&nbsp;the&nbsp;next&nbsp;child,&nbsp;then&nbsp;to<br>
+the&nbsp;children&nbsp;of&nbsp;the&nbsp;child&nbsp;recursively&nbsp;and&nbsp;then&nbsp;to&nbsp;the<br>
+next&nbsp;sibling&nbsp;which&nbsp;is&nbsp;higher&nbsp;in&nbsp;the&nbsp;stacking&nbsp;order.&nbsp;&nbsp;A<br>
+widget&nbsp;is&nbsp;omitted&nbsp;if&nbsp;it&nbsp;has&nbsp;the&nbsp;takefocus&nbsp;resource&nbsp;set<br>
+to&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_focusPrev"><strong>tk_focusPrev</strong></a>(self)</dt><dd><tt>Return&nbsp;previous&nbsp;widget&nbsp;in&nbsp;the&nbsp;focus&nbsp;order.&nbsp;See&nbsp;tk_focusNext&nbsp;for&nbsp;details.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_menuBar"><strong>tk_menuBar</strong></a>(self, *args)</dt><dd><tt>Do&nbsp;not&nbsp;use.&nbsp;Needed&nbsp;in&nbsp;Tk&nbsp;3.6&nbsp;and&nbsp;earlier.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_setPalette"><strong>tk_setPalette</strong></a>(self, *args, **kw)</dt><dd><tt>Set&nbsp;a&nbsp;new&nbsp;color&nbsp;scheme&nbsp;for&nbsp;all&nbsp;widget&nbsp;elements.<br>
+&nbsp;<br>
+A&nbsp;single&nbsp;color&nbsp;as&nbsp;argument&nbsp;will&nbsp;cause&nbsp;that&nbsp;all&nbsp;colors&nbsp;of&nbsp;Tk<br>
+widget&nbsp;elements&nbsp;are&nbsp;derived&nbsp;from&nbsp;this.<br>
+Alternatively&nbsp;several&nbsp;keyword&nbsp;parameters&nbsp;and&nbsp;its&nbsp;associated<br>
+colors&nbsp;can&nbsp;be&nbsp;given.&nbsp;The&nbsp;following&nbsp;keywords&nbsp;are&nbsp;valid:<br>
+activeBackground,&nbsp;foreground,&nbsp;selectColor,<br>
+activeForeground,&nbsp;highlightBackground,&nbsp;selectBackground,<br>
+background,&nbsp;highlightColor,&nbsp;selectForeground,<br>
+disabledForeground,&nbsp;insertBackground,&nbsp;troughColor.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tk_strictMotif"><strong>tk_strictMotif</strong></a>(self, boolean<font color="#909090">=None</font>)</dt><dd><tt>Set&nbsp;Tcl&nbsp;internal&nbsp;variable,&nbsp;whether&nbsp;the&nbsp;look&nbsp;and&nbsp;feel<br>
+should&nbsp;adhere&nbsp;to&nbsp;Motif.<br>
+&nbsp;<br>
+A&nbsp;parameter&nbsp;of&nbsp;1&nbsp;means&nbsp;adhere&nbsp;to&nbsp;Motif&nbsp;(e.g.&nbsp;no&nbsp;color<br>
+change&nbsp;if&nbsp;mouse&nbsp;passes&nbsp;over&nbsp;slider).<br>
+Returns&nbsp;the&nbsp;set&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-tkraise"><strong>tkraise</strong></a>(self, aboveThis<font color="#909090">=None</font>)</dt><dd><tt>Raise&nbsp;this&nbsp;widget&nbsp;in&nbsp;the&nbsp;stacking&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-unbind"><strong>unbind</strong></a>(self, sequence, funcid<font color="#909090">=None</font>)</dt><dd><tt>Unbind&nbsp;for&nbsp;this&nbsp;widget&nbsp;for&nbsp;event&nbsp;SEQUENCE&nbsp;&nbsp;the<br>
+function&nbsp;identified&nbsp;with&nbsp;FUNCID.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-unbind_all"><strong>unbind_all</strong></a>(self, sequence)</dt><dd><tt>Unbind&nbsp;for&nbsp;all&nbsp;widgets&nbsp;for&nbsp;event&nbsp;SEQUENCE&nbsp;all&nbsp;functions.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-unbind_class"><strong>unbind_class</strong></a>(self, className, sequence)</dt><dd><tt>Unbind&nbsp;for&nbsp;all&nbsp;widgets&nbsp;with&nbsp;bindtag&nbsp;CLASSNAME&nbsp;for&nbsp;event&nbsp;SEQUENCE<br>
+all&nbsp;functions.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-update"><strong>update</strong></a>(self)</dt><dd><tt>Enter&nbsp;event&nbsp;loop&nbsp;until&nbsp;all&nbsp;pending&nbsp;events&nbsp;have&nbsp;been&nbsp;processed&nbsp;by&nbsp;Tcl.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-update_idletasks"><strong>update_idletasks</strong></a>(self)</dt><dd><tt>Enter&nbsp;event&nbsp;loop&nbsp;until&nbsp;all&nbsp;idle&nbsp;callbacks&nbsp;have&nbsp;been&nbsp;called.&nbsp;This<br>
+will&nbsp;update&nbsp;the&nbsp;display&nbsp;of&nbsp;windows&nbsp;but&nbsp;not&nbsp;process&nbsp;events&nbsp;caused&nbsp;by<br>
+the&nbsp;user.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-wait_variable"><strong>wait_variable</strong></a>(self, name<font color="#909090">='PY_VAR'</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;variable&nbsp;is&nbsp;modified.<br>
+&nbsp;<br>
+A&nbsp;parameter&nbsp;of&nbsp;type&nbsp;IntVar,&nbsp;StringVar,&nbsp;DoubleVar&nbsp;or<br>
+BooleanVar&nbsp;must&nbsp;be&nbsp;given.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-wait_visibility"><strong>wait_visibility</strong></a>(self, window<font color="#909090">=None</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;visibility&nbsp;of&nbsp;a&nbsp;WIDGET&nbsp;changes<br>
+(e.g.&nbsp;it&nbsp;appears).<br>
+&nbsp;<br>
+If&nbsp;no&nbsp;parameter&nbsp;is&nbsp;given&nbsp;self&nbsp;is&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-wait_window"><strong>wait_window</strong></a>(self, window<font color="#909090">=None</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;a&nbsp;WIDGET&nbsp;is&nbsp;destroyed.<br>
+&nbsp;<br>
+If&nbsp;no&nbsp;parameter&nbsp;is&nbsp;given&nbsp;self&nbsp;is&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-waitvar"><strong>waitvar</strong></a> = wait_variable(self, name<font color="#909090">='PY_VAR'</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;variable&nbsp;is&nbsp;modified.<br>
+&nbsp;<br>
+A&nbsp;parameter&nbsp;of&nbsp;type&nbsp;IntVar,&nbsp;StringVar,&nbsp;DoubleVar&nbsp;or<br>
+BooleanVar&nbsp;must&nbsp;be&nbsp;given.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_atom"><strong>winfo_atom</strong></a>(self, name, displayof<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;integer&nbsp;which&nbsp;represents&nbsp;atom&nbsp;NAME.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_atomname"><strong>winfo_atomname</strong></a>(self, id, displayof<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;name&nbsp;of&nbsp;atom&nbsp;with&nbsp;identifier&nbsp;ID.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_cells"><strong>winfo_cells</strong></a>(self)</dt><dd><tt>Return&nbsp;number&nbsp;of&nbsp;cells&nbsp;in&nbsp;the&nbsp;colormap&nbsp;for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_children"><strong>winfo_children</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;widgets&nbsp;which&nbsp;are&nbsp;children&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_class"><strong>winfo_class</strong></a>(self)</dt><dd><tt>Return&nbsp;window&nbsp;class&nbsp;name&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_colormapfull"><strong>winfo_colormapfull</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;at&nbsp;the&nbsp;last&nbsp;color&nbsp;request&nbsp;the&nbsp;colormap&nbsp;was&nbsp;full.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_containing"><strong>winfo_containing</strong></a>(self, rootX, rootY, displayof<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;the&nbsp;widget&nbsp;which&nbsp;is&nbsp;at&nbsp;the&nbsp;root&nbsp;coordinates&nbsp;ROOTX,&nbsp;ROOTY.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_depth"><strong>winfo_depth</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;bits&nbsp;per&nbsp;pixel.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_exists"><strong>winfo_exists</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;this&nbsp;widget&nbsp;exists.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_fpixels"><strong>winfo_fpixels</strong></a>(self, number)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;pixels&nbsp;for&nbsp;the&nbsp;given&nbsp;distance&nbsp;NUMBER<br>
+(e.g.&nbsp;"3c")&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_geometry"><strong>winfo_geometry</strong></a>(self)</dt><dd><tt>Return&nbsp;geometry&nbsp;string&nbsp;for&nbsp;this&nbsp;widget&nbsp;in&nbsp;the&nbsp;form&nbsp;"widthxheight+X+Y".</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_height"><strong>winfo_height</strong></a>(self)</dt><dd><tt>Return&nbsp;height&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_id"><strong>winfo_id</strong></a>(self)</dt><dd><tt>Return&nbsp;identifier&nbsp;ID&nbsp;for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_interps"><strong>winfo_interps</strong></a>(self, displayof<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;the&nbsp;name&nbsp;of&nbsp;all&nbsp;Tcl&nbsp;interpreters&nbsp;for&nbsp;this&nbsp;display.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_ismapped"><strong>winfo_ismapped</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;this&nbsp;widget&nbsp;is&nbsp;mapped.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_manager"><strong>winfo_manager</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;window&nbsp;mananger&nbsp;name&nbsp;for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_name"><strong>winfo_name</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_parent"><strong>winfo_parent</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;parent&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_pathname"><strong>winfo_pathname</strong></a>(self, id, displayof<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;the&nbsp;pathname&nbsp;of&nbsp;the&nbsp;widget&nbsp;given&nbsp;by&nbsp;ID.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_pixels"><strong>winfo_pixels</strong></a>(self, number)</dt><dd><tt>Rounded&nbsp;integer&nbsp;value&nbsp;of&nbsp;winfo_fpixels.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_pointerx"><strong>winfo_pointerx</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;x&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;pointer&nbsp;on&nbsp;the&nbsp;root&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_pointerxy"><strong>winfo_pointerxy</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;x&nbsp;and&nbsp;y&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;pointer&nbsp;on&nbsp;the&nbsp;root&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_pointery"><strong>winfo_pointery</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;y&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;pointer&nbsp;on&nbsp;the&nbsp;root&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_reqheight"><strong>winfo_reqheight</strong></a>(self)</dt><dd><tt>Return&nbsp;requested&nbsp;height&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_reqwidth"><strong>winfo_reqwidth</strong></a>(self)</dt><dd><tt>Return&nbsp;requested&nbsp;width&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_rgb"><strong>winfo_rgb</strong></a>(self, color)</dt><dd><tt>Return&nbsp;tuple&nbsp;of&nbsp;decimal&nbsp;values&nbsp;for&nbsp;red,&nbsp;green,&nbsp;blue&nbsp;for<br>
+COLOR&nbsp;in&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_rootx"><strong>winfo_rootx</strong></a>(self)</dt><dd><tt>Return&nbsp;x&nbsp;coordinate&nbsp;of&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;this&nbsp;widget&nbsp;on&nbsp;the<br>
+root&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_rooty"><strong>winfo_rooty</strong></a>(self)</dt><dd><tt>Return&nbsp;y&nbsp;coordinate&nbsp;of&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;this&nbsp;widget&nbsp;on&nbsp;the<br>
+root&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screen"><strong>winfo_screen</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;screen&nbsp;name&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screencells"><strong>winfo_screencells</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;the&nbsp;cells&nbsp;in&nbsp;the&nbsp;colormap&nbsp;of&nbsp;the&nbsp;screen<br>
+of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screendepth"><strong>winfo_screendepth</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;bits&nbsp;per&nbsp;pixel&nbsp;of&nbsp;the&nbsp;root&nbsp;window&nbsp;of&nbsp;the<br>
+screen&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screenheight"><strong>winfo_screenheight</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;pixels&nbsp;of&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;screen&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;pixel.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screenmmheight"><strong>winfo_screenmmheight</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;pixels&nbsp;of&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;screen&nbsp;of<br>
+this&nbsp;widget&nbsp;in&nbsp;mm.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screenmmwidth"><strong>winfo_screenmmwidth</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;pixels&nbsp;of&nbsp;the&nbsp;width&nbsp;of&nbsp;the&nbsp;screen&nbsp;of<br>
+this&nbsp;widget&nbsp;in&nbsp;mm.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screenvisual"><strong>winfo_screenvisual</strong></a>(self)</dt><dd><tt>Return&nbsp;one&nbsp;of&nbsp;the&nbsp;strings&nbsp;directcolor,&nbsp;grayscale,&nbsp;pseudocolor,<br>
+staticcolor,&nbsp;staticgray,&nbsp;or&nbsp;truecolor&nbsp;for&nbsp;the&nbsp;default<br>
+colormodel&nbsp;of&nbsp;this&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_screenwidth"><strong>winfo_screenwidth</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;pixels&nbsp;of&nbsp;the&nbsp;width&nbsp;of&nbsp;the&nbsp;screen&nbsp;of<br>
+this&nbsp;widget&nbsp;in&nbsp;pixel.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_server"><strong>winfo_server</strong></a>(self)</dt><dd><tt>Return&nbsp;information&nbsp;of&nbsp;the&nbsp;X-Server&nbsp;of&nbsp;the&nbsp;screen&nbsp;of&nbsp;this&nbsp;widget&nbsp;in<br>
+the&nbsp;form&nbsp;"XmajorRminor&nbsp;vendor&nbsp;vendorVersion".</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_toplevel"><strong>winfo_toplevel</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;toplevel&nbsp;widget&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_viewable"><strong>winfo_viewable</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;the&nbsp;widget&nbsp;and&nbsp;all&nbsp;its&nbsp;higher&nbsp;ancestors&nbsp;are&nbsp;mapped.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_visual"><strong>winfo_visual</strong></a>(self)</dt><dd><tt>Return&nbsp;one&nbsp;of&nbsp;the&nbsp;strings&nbsp;directcolor,&nbsp;grayscale,&nbsp;pseudocolor,<br>
+staticcolor,&nbsp;staticgray,&nbsp;or&nbsp;truecolor&nbsp;for&nbsp;the<br>
+colormodel&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_visualid"><strong>winfo_visualid</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;X&nbsp;identifier&nbsp;for&nbsp;the&nbsp;visual&nbsp;for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_visualsavailable"><strong>winfo_visualsavailable</strong></a>(self, includeids<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;visuals&nbsp;available&nbsp;for&nbsp;the&nbsp;screen<br>
+of&nbsp;this&nbsp;widget.<br>
+&nbsp;<br>
+Each&nbsp;item&nbsp;in&nbsp;the&nbsp;list&nbsp;consists&nbsp;of&nbsp;a&nbsp;visual&nbsp;name&nbsp;(see&nbsp;winfo_visual),&nbsp;a<br>
+depth&nbsp;and&nbsp;if&nbsp;INCLUDEIDS=1&nbsp;is&nbsp;given&nbsp;also&nbsp;the&nbsp;X&nbsp;identifier.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_vrootheight"><strong>winfo_vrootheight</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;virtual&nbsp;root&nbsp;window&nbsp;associated&nbsp;with&nbsp;this<br>
+widget&nbsp;in&nbsp;pixels.&nbsp;If&nbsp;there&nbsp;is&nbsp;no&nbsp;virtual&nbsp;root&nbsp;window&nbsp;return&nbsp;the<br>
+height&nbsp;of&nbsp;the&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_vrootwidth"><strong>winfo_vrootwidth</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;width&nbsp;of&nbsp;the&nbsp;virtual&nbsp;root&nbsp;window&nbsp;associated&nbsp;with&nbsp;this<br>
+widget&nbsp;in&nbsp;pixel.&nbsp;If&nbsp;there&nbsp;is&nbsp;no&nbsp;virtual&nbsp;root&nbsp;window&nbsp;return&nbsp;the<br>
+width&nbsp;of&nbsp;the&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_vrootx"><strong>winfo_vrootx</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;x&nbsp;offset&nbsp;of&nbsp;the&nbsp;virtual&nbsp;root&nbsp;relative&nbsp;to&nbsp;the&nbsp;root<br>
+window&nbsp;of&nbsp;the&nbsp;screen&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_vrooty"><strong>winfo_vrooty</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;y&nbsp;offset&nbsp;of&nbsp;the&nbsp;virtual&nbsp;root&nbsp;relative&nbsp;to&nbsp;the&nbsp;root<br>
+window&nbsp;of&nbsp;the&nbsp;screen&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_width"><strong>winfo_width</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;width&nbsp;of&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_x"><strong>winfo_x</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;x&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;the&nbsp;parent.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-winfo_y"><strong>winfo_y</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;y&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;this&nbsp;widget<br>
+in&nbsp;the&nbsp;parent.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="Tkinter.html#Misc">Tkinter.Misc</a>:<br>
+<dl><dt><strong>getdouble</strong> = &lt;type 'float'&gt;<dd><tt>float(x)&nbsp;-&gt;&nbsp;floating&nbsp;point&nbsp;number<br>
+&nbsp;<br>
+Convert&nbsp;a&nbsp;string&nbsp;or&nbsp;number&nbsp;to&nbsp;a&nbsp;floating&nbsp;point&nbsp;number,&nbsp;if&nbsp;possible.</tt></dl>
+
+<dl><dt><strong>getint</strong> = &lt;type 'int'&gt;<dd><tt>int(x=0)&nbsp;-&gt;&nbsp;int&nbsp;or&nbsp;long<br>
+int(x,&nbsp;base=10)&nbsp;-&gt;&nbsp;int&nbsp;or&nbsp;long<br>
+&nbsp;<br>
+Convert&nbsp;a&nbsp;number&nbsp;or&nbsp;string&nbsp;to&nbsp;an&nbsp;integer,&nbsp;or&nbsp;return&nbsp;0&nbsp;if&nbsp;no&nbsp;arguments<br>
+are&nbsp;given.&nbsp;&nbsp;If&nbsp;x&nbsp;is&nbsp;floating&nbsp;point,&nbsp;the&nbsp;conversion&nbsp;truncates&nbsp;towards&nbsp;zero.<br>
+If&nbsp;x&nbsp;is&nbsp;outside&nbsp;the&nbsp;integer&nbsp;range,&nbsp;the&nbsp;function&nbsp;returns&nbsp;a&nbsp;long&nbsp;instead.<br>
+&nbsp;<br>
+If&nbsp;x&nbsp;is&nbsp;not&nbsp;a&nbsp;number&nbsp;or&nbsp;if&nbsp;base&nbsp;is&nbsp;given,&nbsp;then&nbsp;x&nbsp;must&nbsp;be&nbsp;a&nbsp;string&nbsp;or<br>
+Unicode&nbsp;object&nbsp;representing&nbsp;an&nbsp;integer&nbsp;literal&nbsp;in&nbsp;the&nbsp;given&nbsp;base.&nbsp;&nbsp;The<br>
+literal&nbsp;can&nbsp;be&nbsp;preceded&nbsp;by&nbsp;'+'&nbsp;or&nbsp;'-'&nbsp;and&nbsp;be&nbsp;surrounded&nbsp;by&nbsp;whitespace.<br>
+The&nbsp;base&nbsp;defaults&nbsp;to&nbsp;10.&nbsp;&nbsp;Valid&nbsp;bases&nbsp;are&nbsp;0&nbsp;and&nbsp;2-36.&nbsp;&nbsp;Base&nbsp;0&nbsp;means&nbsp;to<br>
+interpret&nbsp;the&nbsp;base&nbsp;from&nbsp;the&nbsp;string&nbsp;as&nbsp;an&nbsp;integer&nbsp;literal.<br>
+&gt;&gt;&gt;&nbsp;int('0b100',&nbsp;base=0)<br>
+4</tt></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#Pack">Tkinter.Pack</a>:<br>
+<dl><dt><a name="TextCin-forget"><strong>forget</strong></a> = pack_forget(self)</dt><dd><tt>Unmap&nbsp;this&nbsp;widget&nbsp;and&nbsp;do&nbsp;not&nbsp;use&nbsp;it&nbsp;for&nbsp;the&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-info"><strong>info</strong></a> = pack_info(self)</dt><dd><tt>Return&nbsp;information&nbsp;about&nbsp;the&nbsp;packing&nbsp;options<br>
+for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack"><strong>pack</strong></a> = pack_configure(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Pack&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget.&nbsp;Use&nbsp;as&nbsp;options:<br>
+after=widget&nbsp;-&nbsp;pack&nbsp;it&nbsp;after&nbsp;you&nbsp;have&nbsp;packed&nbsp;widget<br>
+anchor=NSEW&nbsp;(or&nbsp;subset)&nbsp;-&nbsp;position&nbsp;widget&nbsp;according&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given&nbsp;direction<br>
+before=widget&nbsp;-&nbsp;pack&nbsp;it&nbsp;before&nbsp;you&nbsp;will&nbsp;pack&nbsp;widget<br>
+expand=bool&nbsp;-&nbsp;expand&nbsp;widget&nbsp;if&nbsp;parent&nbsp;size&nbsp;grows<br>
+fill=NONE&nbsp;or&nbsp;X&nbsp;or&nbsp;Y&nbsp;or&nbsp;BOTH&nbsp;-&nbsp;fill&nbsp;widget&nbsp;if&nbsp;widget&nbsp;grows<br>
+in=master&nbsp;-&nbsp;use&nbsp;master&nbsp;to&nbsp;contain&nbsp;this&nbsp;widget<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+ipadx=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+ipady=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+padx=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+pady=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+side=TOP&nbsp;or&nbsp;BOTTOM&nbsp;or&nbsp;LEFT&nbsp;or&nbsp;RIGHT&nbsp;-&nbsp;&nbsp;where&nbsp;to&nbsp;add&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack_configure"><strong>pack_configure</strong></a>(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Pack&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget.&nbsp;Use&nbsp;as&nbsp;options:<br>
+after=widget&nbsp;-&nbsp;pack&nbsp;it&nbsp;after&nbsp;you&nbsp;have&nbsp;packed&nbsp;widget<br>
+anchor=NSEW&nbsp;(or&nbsp;subset)&nbsp;-&nbsp;position&nbsp;widget&nbsp;according&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given&nbsp;direction<br>
+before=widget&nbsp;-&nbsp;pack&nbsp;it&nbsp;before&nbsp;you&nbsp;will&nbsp;pack&nbsp;widget<br>
+expand=bool&nbsp;-&nbsp;expand&nbsp;widget&nbsp;if&nbsp;parent&nbsp;size&nbsp;grows<br>
+fill=NONE&nbsp;or&nbsp;X&nbsp;or&nbsp;Y&nbsp;or&nbsp;BOTH&nbsp;-&nbsp;fill&nbsp;widget&nbsp;if&nbsp;widget&nbsp;grows<br>
+in=master&nbsp;-&nbsp;use&nbsp;master&nbsp;to&nbsp;contain&nbsp;this&nbsp;widget<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+ipadx=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+ipady=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+padx=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+pady=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+side=TOP&nbsp;or&nbsp;BOTTOM&nbsp;or&nbsp;LEFT&nbsp;or&nbsp;RIGHT&nbsp;-&nbsp;&nbsp;where&nbsp;to&nbsp;add&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack_forget"><strong>pack_forget</strong></a>(self)</dt><dd><tt>Unmap&nbsp;this&nbsp;widget&nbsp;and&nbsp;do&nbsp;not&nbsp;use&nbsp;it&nbsp;for&nbsp;the&nbsp;packing&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-pack_info"><strong>pack_info</strong></a>(self)</dt><dd><tt>Return&nbsp;information&nbsp;about&nbsp;the&nbsp;packing&nbsp;options<br>
+for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#Place">Tkinter.Place</a>:<br>
+<dl><dt><a name="TextCin-place"><strong>place</strong></a> = place_configure(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Place&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget.&nbsp;Use&nbsp;as&nbsp;options:<br>
+in=master&nbsp;-&nbsp;master&nbsp;relative&nbsp;to&nbsp;which&nbsp;the&nbsp;widget&nbsp;is&nbsp;placed<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+x=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;at&nbsp;position&nbsp;x&nbsp;of&nbsp;master<br>
+y=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;at&nbsp;position&nbsp;y&nbsp;of&nbsp;master<br>
+relx=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;width&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;right&nbsp;edge)<br>
+rely=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;height&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;bottom&nbsp;edge)<br>
+anchor=NSEW&nbsp;(or&nbsp;subset)&nbsp;-&nbsp;position&nbsp;anchor&nbsp;according&nbsp;to&nbsp;given&nbsp;direction<br>
+width=amount&nbsp;-&nbsp;width&nbsp;of&nbsp;this&nbsp;widget&nbsp;in&nbsp;pixel<br>
+height=amount&nbsp;-&nbsp;height&nbsp;of&nbsp;this&nbsp;widget&nbsp;in&nbsp;pixel<br>
+relwidth=amount&nbsp;-&nbsp;width&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;width&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;the&nbsp;same&nbsp;width<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as&nbsp;the&nbsp;master)<br>
+relheight=amount&nbsp;-&nbsp;height&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;height&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height&nbsp;as&nbsp;the&nbsp;master)<br>
+bordermode="inside"&nbsp;or&nbsp;"outside"&nbsp;-&nbsp;whether&nbsp;to&nbsp;take&nbsp;border&nbsp;width&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master&nbsp;widget&nbsp;into&nbsp;account</tt></dd></dl>
+
+<dl><dt><a name="TextCin-place_configure"><strong>place_configure</strong></a>(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Place&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget.&nbsp;Use&nbsp;as&nbsp;options:<br>
+in=master&nbsp;-&nbsp;master&nbsp;relative&nbsp;to&nbsp;which&nbsp;the&nbsp;widget&nbsp;is&nbsp;placed<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+x=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;at&nbsp;position&nbsp;x&nbsp;of&nbsp;master<br>
+y=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;at&nbsp;position&nbsp;y&nbsp;of&nbsp;master<br>
+relx=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;width&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;right&nbsp;edge)<br>
+rely=amount&nbsp;-&nbsp;locate&nbsp;anchor&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;height&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;bottom&nbsp;edge)<br>
+anchor=NSEW&nbsp;(or&nbsp;subset)&nbsp;-&nbsp;position&nbsp;anchor&nbsp;according&nbsp;to&nbsp;given&nbsp;direction<br>
+width=amount&nbsp;-&nbsp;width&nbsp;of&nbsp;this&nbsp;widget&nbsp;in&nbsp;pixel<br>
+height=amount&nbsp;-&nbsp;height&nbsp;of&nbsp;this&nbsp;widget&nbsp;in&nbsp;pixel<br>
+relwidth=amount&nbsp;-&nbsp;width&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;width&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;the&nbsp;same&nbsp;width<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as&nbsp;the&nbsp;master)<br>
+relheight=amount&nbsp;-&nbsp;height&nbsp;of&nbsp;this&nbsp;widget&nbsp;between&nbsp;0.0&nbsp;and&nbsp;1.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;to&nbsp;height&nbsp;of&nbsp;master&nbsp;(1.0&nbsp;is&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height&nbsp;as&nbsp;the&nbsp;master)<br>
+bordermode="inside"&nbsp;or&nbsp;"outside"&nbsp;-&nbsp;whether&nbsp;to&nbsp;take&nbsp;border&nbsp;width&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master&nbsp;widget&nbsp;into&nbsp;account</tt></dd></dl>
+
+<dl><dt><a name="TextCin-place_forget"><strong>place_forget</strong></a>(self)</dt><dd><tt>Unmap&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-place_info"><strong>place_info</strong></a>(self)</dt><dd><tt>Return&nbsp;information&nbsp;about&nbsp;the&nbsp;placing&nbsp;options<br>
+for&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#Grid">Tkinter.Grid</a>:<br>
+<dl><dt><a name="TextCin-grid"><strong>grid</strong></a> = grid_configure(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Position&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget&nbsp;in&nbsp;a&nbsp;grid.&nbsp;Use&nbsp;as&nbsp;options:<br>
+column=number&nbsp;-&nbsp;use&nbsp;cell&nbsp;identified&nbsp;with&nbsp;given&nbsp;column&nbsp;(starting&nbsp;with&nbsp;0)<br>
+columnspan=number&nbsp;-&nbsp;this&nbsp;widget&nbsp;will&nbsp;span&nbsp;several&nbsp;columns<br>
+in=master&nbsp;-&nbsp;use&nbsp;master&nbsp;to&nbsp;contain&nbsp;this&nbsp;widget<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+ipadx=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+ipady=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+padx=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+pady=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+row=number&nbsp;-&nbsp;use&nbsp;cell&nbsp;identified&nbsp;with&nbsp;given&nbsp;row&nbsp;(starting&nbsp;with&nbsp;0)<br>
+rowspan=number&nbsp;-&nbsp;this&nbsp;widget&nbsp;will&nbsp;span&nbsp;several&nbsp;rows<br>
+sticky=NSEW&nbsp;-&nbsp;if&nbsp;cell&nbsp;is&nbsp;larger&nbsp;on&nbsp;which&nbsp;sides&nbsp;will&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;widget&nbsp;stick&nbsp;to&nbsp;the&nbsp;cell&nbsp;boundary</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_configure"><strong>grid_configure</strong></a>(self, cnf<font color="#909090">={}</font>, **kw)</dt><dd><tt>Position&nbsp;a&nbsp;widget&nbsp;in&nbsp;the&nbsp;parent&nbsp;widget&nbsp;in&nbsp;a&nbsp;grid.&nbsp;Use&nbsp;as&nbsp;options:<br>
+column=number&nbsp;-&nbsp;use&nbsp;cell&nbsp;identified&nbsp;with&nbsp;given&nbsp;column&nbsp;(starting&nbsp;with&nbsp;0)<br>
+columnspan=number&nbsp;-&nbsp;this&nbsp;widget&nbsp;will&nbsp;span&nbsp;several&nbsp;columns<br>
+in=master&nbsp;-&nbsp;use&nbsp;master&nbsp;to&nbsp;contain&nbsp;this&nbsp;widget<br>
+in_=master&nbsp;-&nbsp;see&nbsp;'in'&nbsp;option&nbsp;description<br>
+ipadx=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+ipady=amount&nbsp;-&nbsp;add&nbsp;internal&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+padx=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;x&nbsp;direction<br>
+pady=amount&nbsp;-&nbsp;add&nbsp;padding&nbsp;in&nbsp;y&nbsp;direction<br>
+row=number&nbsp;-&nbsp;use&nbsp;cell&nbsp;identified&nbsp;with&nbsp;given&nbsp;row&nbsp;(starting&nbsp;with&nbsp;0)<br>
+rowspan=number&nbsp;-&nbsp;this&nbsp;widget&nbsp;will&nbsp;span&nbsp;several&nbsp;rows<br>
+sticky=NSEW&nbsp;-&nbsp;if&nbsp;cell&nbsp;is&nbsp;larger&nbsp;on&nbsp;which&nbsp;sides&nbsp;will&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;widget&nbsp;stick&nbsp;to&nbsp;the&nbsp;cell&nbsp;boundary</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_forget"><strong>grid_forget</strong></a>(self)</dt><dd><tt>Unmap&nbsp;this&nbsp;widget.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_info"><strong>grid_info</strong></a>(self)</dt><dd><tt>Return&nbsp;information&nbsp;about&nbsp;the&nbsp;options<br>
+for&nbsp;positioning&nbsp;this&nbsp;widget&nbsp;in&nbsp;a&nbsp;grid.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-grid_remove"><strong>grid_remove</strong></a>(self)</dt><dd><tt>Unmap&nbsp;this&nbsp;widget&nbsp;but&nbsp;remember&nbsp;the&nbsp;grid&nbsp;options.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-location"><strong>location</strong></a> = grid_location(self, x, y)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;column&nbsp;and&nbsp;row&nbsp;which&nbsp;identify&nbsp;the&nbsp;cell<br>
+at&nbsp;which&nbsp;the&nbsp;pixel&nbsp;at&nbsp;position&nbsp;X&nbsp;and&nbsp;Y&nbsp;inside&nbsp;the&nbsp;master<br>
+widget&nbsp;is&nbsp;located.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#XView">Tkinter.XView</a>:<br>
+<dl><dt><a name="TextCin-xview"><strong>xview</strong></a>(self, *args)</dt><dd><tt>Query&nbsp;and&nbsp;change&nbsp;the&nbsp;horizontal&nbsp;position&nbsp;of&nbsp;the&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-xview_moveto"><strong>xview_moveto</strong></a>(self, fraction)</dt><dd><tt>Adjusts&nbsp;the&nbsp;view&nbsp;in&nbsp;the&nbsp;window&nbsp;so&nbsp;that&nbsp;FRACTION&nbsp;of&nbsp;the<br>
+total&nbsp;width&nbsp;of&nbsp;the&nbsp;canvas&nbsp;is&nbsp;off-screen&nbsp;to&nbsp;the&nbsp;left.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-xview_scroll"><strong>xview_scroll</strong></a>(self, number, what)</dt><dd><tt>Shift&nbsp;the&nbsp;x-view&nbsp;according&nbsp;to&nbsp;NUMBER&nbsp;which&nbsp;is&nbsp;measured&nbsp;in&nbsp;"units"<br>
+or&nbsp;"pages"&nbsp;(WHAT).</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Tkinter.html#YView">Tkinter.YView</a>:<br>
+<dl><dt><a name="TextCin-yview"><strong>yview</strong></a>(self, *args)</dt><dd><tt>Query&nbsp;and&nbsp;change&nbsp;the&nbsp;vertical&nbsp;position&nbsp;of&nbsp;the&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-yview_moveto"><strong>yview_moveto</strong></a>(self, fraction)</dt><dd><tt>Adjusts&nbsp;the&nbsp;view&nbsp;in&nbsp;the&nbsp;window&nbsp;so&nbsp;that&nbsp;FRACTION&nbsp;of&nbsp;the<br>
+total&nbsp;height&nbsp;of&nbsp;the&nbsp;canvas&nbsp;is&nbsp;off-screen&nbsp;to&nbsp;the&nbsp;top.</tt></dd></dl>
+
+<dl><dt><a name="TextCin-yview_scroll"><strong>yview_scroll</strong></a>(self, number, what)</dt><dd><tt>Shift&nbsp;the&nbsp;y-view&nbsp;according&nbsp;to&nbsp;NUMBER&nbsp;which&nbsp;is&nbsp;measured&nbsp;in<br>
+"units"&nbsp;or&nbsp;"pages"&nbsp;(WHAT).</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ACTIVE</strong> = 'active'<br>
+<strong>ALL</strong> = 'all'<br>
+<strong>ANCHOR</strong> = 'anchor'<br>
+<strong>ARC</strong> = 'arc'<br>
+<strong>BASELINE</strong> = 'baseline'<br>
+<strong>BEVEL</strong> = 'bevel'<br>
+<strong>BOTH</strong> = 'both'<br>
+<strong>BOTTOM</strong> = 'bottom'<br>
+<strong>BROWSE</strong> = 'browse'<br>
+<strong>BUTT</strong> = 'butt'<br>
+<strong>CASCADE</strong> = 'cascade'<br>
+<strong>CENTER</strong> = 'center'<br>
+<strong>CHAR</strong> = 'char'<br>
+<strong>CHECKBUTTON</strong> = 'checkbutton'<br>
+<strong>CHORD</strong> = 'chord'<br>
+<strong>COMMAND</strong> = 'command'<br>
+<strong>CURRENT</strong> = 'current'<br>
+<strong>DISABLED</strong> = 'disabled'<br>
+<strong>DOTBOX</strong> = 'dotbox'<br>
+<strong>E</strong> = 'e'<br>
+<strong>END</strong> = 'end'<br>
+<strong>EW</strong> = 'ew'<br>
+<strong>EXCEPTION</strong> = 8<br>
+<strong>EXTENDED</strong> = 'extended'<br>
+<strong>FALSE</strong> = 0<br>
+<strong>FIRST</strong> = 'first'<br>
+<strong>FLAT</strong> = 'flat'<br>
+<strong>GROOVE</strong> = 'groove'<br>
+<strong>HIDDEN</strong> = 'hidden'<br>
+<strong>HORIZONTAL</strong> = 'horizontal'<br>
+<strong>INSERT</strong> = 'insert'<br>
+<strong>INSIDE</strong> = 'inside'<br>
+<strong>LAST</strong> = 'last'<br>
+<strong>LEFT</strong> = 'left'<br>
+<strong>MITER</strong> = 'miter'<br>
+<strong>MOVETO</strong> = 'moveto'<br>
+<strong>MULTIPLE</strong> = 'multiple'<br>
+<strong>N</strong> = 'n'<br>
+<strong>NE</strong> = 'ne'<br>
+<strong>NO</strong> = 0<br>
+<strong>NONE</strong> = 'none'<br>
+<strong>NORMAL</strong> = 'normal'<br>
+<strong>NS</strong> = 'ns'<br>
+<strong>NSEW</strong> = 'nsew'<br>
+<strong>NUMERIC</strong> = 'numeric'<br>
+<strong>NW</strong> = 'nw'<br>
+<strong>OFF</strong> = 0<br>
+<strong>ON</strong> = 1<br>
+<strong>OUTSIDE</strong> = 'outside'<br>
+<strong>PAGES</strong> = 'pages'<br>
+<strong>PIESLICE</strong> = 'pieslice'<br>
+<strong>PROJECTING</strong> = 'projecting'<br>
+<strong>RADIOBUTTON</strong> = 'radiobutton'<br>
+<strong>RAISED</strong> = 'raised'<br>
+<strong>READABLE</strong> = 2<br>
+<strong>RIDGE</strong> = 'ridge'<br>
+<strong>RIGHT</strong> = 'right'<br>
+<strong>ROUND</strong> = 'round'<br>
+<strong>S</strong> = 's'<br>
+<strong>SCROLL</strong> = 'scroll'<br>
+<strong>SE</strong> = 'se'<br>
+<strong>SEL</strong> = 'sel'<br>
+<strong>SEL_FIRST</strong> = 'sel.first'<br>
+<strong>SEL_LAST</strong> = 'sel.last'<br>
+<strong>SEPARATOR</strong> = 'separator'<br>
+<strong>SINGLE</strong> = 'single'<br>
+<strong>SOLID</strong> = 'solid'<br>
+<strong>SUNKEN</strong> = 'sunken'<br>
+<strong>SW</strong> = 'sw'<br>
+<strong>StringTypes</strong> = (&lt;type 'str'&gt;, &lt;type 'unicode'&gt;)<br>
+<strong>TOP</strong> = 'top'<br>
+<strong>TRUE</strong> = 1<br>
+<strong>TclVersion</strong> = 8.5<br>
+<strong>TkVersion</strong> = 8.5<br>
+<strong>UNDERLINE</strong> = 'underline'<br>
+<strong>UNITS</strong> = 'units'<br>
+<strong>VERTICAL</strong> = 'vertical'<br>
+<strong>W</strong> = 'w'<br>
+<strong>WORD</strong> = 'word'<br>
+<strong>WRITABLE</strong> = 4<br>
+<strong>X</strong> = 'x'<br>
+<strong>Y</strong> = 'y'<br>
+<strong>YES</strong> = 1<br>
+<strong>__author__</strong> = 'Marc-Andre Jean'<br>
+<strong>__status__</strong> = 'Production'<br>
+<strong>__version__</strong> = '1.0'<br>
+<strong>wantobjects</strong> = 1</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Marc-Andre&nbsp;Jean</td></tr></table>
+</body></html>
