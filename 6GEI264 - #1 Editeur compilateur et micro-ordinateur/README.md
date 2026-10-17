@@ -2,8 +2,6 @@
 
 UQAC
 
-[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2F6GEI264)
-
 ## Travail : éditeur, compilateur et micro-ordinateur
 
 Application en Python comprenant un éditeur, un compilateur et un micro-ordinateur simulé (bus, CPU, ALU, ROM, RAM, E/S) pour un langage assembleur.

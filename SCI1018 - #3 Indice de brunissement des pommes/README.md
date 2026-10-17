@@ -1,7 +1,5 @@
 # SCI 1018 — Statistiques avec R
 
-[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2FSCI1018)
-
 ## Laboratoire 3 : Indice de brunissement de cubes de pommes
 
 Le brunissement de la chair de pomme dépend-il de la solution dans laquelle le cube a trempé? Six solutions de trempage sont comparées : témoin sec, eau de source, jus de citron, vinaigre blanc, eau salée et bicarbonate de soude. Le dispositif est en blocs (une pomme par bloc), la mesure est colorimétrique (ImageJ) et l'analyse est une ANOVA à deux critères sans répétitions, suivie d'un test de Tukey.
