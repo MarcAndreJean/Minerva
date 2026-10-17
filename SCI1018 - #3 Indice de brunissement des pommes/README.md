@@ -1,6 +1,6 @@
 # SCI 1018 — Statistiques avec R
 
-[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2FSCI1018)
+[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2FSCI1018%2520-%2520%25233%2520Indice%2520de%2520brunissement%2520des%2520pommes)
 
 ## Laboratoire 3 : Indice de brunissement de cubes de pommes
 

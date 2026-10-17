@@ -1,8 +1,8 @@
 # 6GEI264 — Projet de conception : vérification et validation des logiciels
 
-UQAC
+[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2F6GEI264%2520-%2520%25231%2520Editeur%2520compilateur%2520et%2520micro-ordinateur)
 
-[Télécharger le travail](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2F6GEI264)
+UQAC
 
 ## Travail : éditeur, compilateur et micro-ordinateur
 
