@@ -8,7 +8,7 @@ using HtmlAgilityPack;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         if (args.Length < 1) {
             Console.WriteLine("Error: Missing URL argument.");
@@ -16,7 +16,7 @@ class Program
         }
 
         Console.WriteLine($"url: {args[0]}");
-        // Start measuring time (performance counter).
+        // Start measuring time.
         var perfStopWatch = Stopwatch.StartNew();
 
         // Load data from URL.
@@ -24,7 +24,7 @@ class Program
         try {
             using (var client = new HttpClient()) {
                 client.DefaultRequestHeaders.Add("User-Agent", "scraping/1.0");
-                textContent = client.GetStringAsync(args[0]).Result;
+                textContent = await client.GetStringAsync(args[0]);
             }
         }
         catch (Exception e) {
@@ -49,7 +49,7 @@ class Program
         
         Console.WriteLine($"Word count: {wordCount}");
 
-        var perfTime = perfStopWatch.Elapsed.TotalSeconds;
-        Console.WriteLine($"Execution time = {perfTime:F3}s");
+        var perfTime = perfStopWatch.Elapsed.TotalMilliseconds;
+        Console.WriteLine($"Execution time = {perfTime:F2} ms");
     }
 }

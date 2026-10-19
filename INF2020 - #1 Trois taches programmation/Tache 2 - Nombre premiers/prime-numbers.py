@@ -29,7 +29,7 @@ def main(n) -> None:
         return
 
     # Start measuring time (performance counter)
-    perf_start_time = time.perf_counter() 
+    perf_start_time = time.perf_counter()
 
     is_prime_list = [True] * (n + 1)
     is_prime_list[0] = is_prime_list[1] = False
@@ -45,8 +45,8 @@ def main(n) -> None:
     print(f"Prime numbers up to {n}:")
     print(", ".join(map(str, primes)))
 
-    perf_time = time.perf_counter() - perf_start_time
-    print(f"Execution time = {perf_time:.3f}s")
+    perf_time = (time.perf_counter() - perf_start_time) * 1000
+    print(f"Execution time = {perf_time:.2f} ms")
 
 
 if __name__ == "__main__":

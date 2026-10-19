@@ -25,7 +25,7 @@ def main(url) -> None:
         url: The URL of the webpage to scrape.
     """
     print("url:", url)
-    # Start measuring time (performance counter).
+    # Start measuring time.
     perf_start_time = time.perf_counter()
     try:
         request = Request(url, headers={"User-Agent": "scraping/1.0"})
@@ -43,8 +43,8 @@ def main(url) -> None:
     text = soup.get_text(separator=" ", strip=True)
     print("Word count:", len(text.split()))
 
-    perf_time = time.perf_counter() - perf_start_time
-    print(f"Execution time = {perf_time:.3f}s")
+    perf_time = (time.perf_counter() - perf_start_time) * 1000
+    print(f"Execution time = {perf_time:.2f} ms")
 
 
 if __name__ == "__main__":

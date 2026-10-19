@@ -8,6 +8,9 @@ using System.Globalization;
 
 class Program
 {
+    const string PriceColumn = "price";
+    const string QuantityColumn = "quantity";
+
     static void Main(string[] args)
     {
         if (args.Length < 1) {
@@ -15,18 +18,28 @@ class Program
             return;
         }
 
-        // Start measuring time (performance counter).
+        // Start measuring time.
         var perfStopWatch = Stopwatch.StartNew();
 
         // Load data from CSV file.
         var priceList = Array.Empty<decimal>();
         var quantityList = Array.Empty<decimal>();
         try {
-            var csvData = File.ReadLines(args[0])
-                .Skip(1).Select(l => l.Split(',')).ToArray();
-            priceList = csvData.Select(c => decimal.Parse(c[2], CultureInfo.InvariantCulture))
+            var lines = File.ReadLines(args[0]).ToArray();
+            var header = lines[0].Split(',').Select(h => h.Trim()).ToList();
+            var priceIndex = header.IndexOf(PriceColumn);
+            var quantityIndex = header.IndexOf(QuantityColumn);
+            if (priceIndex < 0 || quantityIndex < 0) {
+                throw new FormatException(
+                    $"Missing column \"{PriceColumn}\" or \"{QuantityColumn}\" in header.");
+            }
+
+            var csvData = lines.Skip(1).Select(l => l.Split(',')).ToArray();
+            priceList = csvData
+                .Select(c => decimal.Parse(c[priceIndex], CultureInfo.InvariantCulture))
                 .ToArray();
-            quantityList = csvData.Select(c => decimal.Parse(c[3], CultureInfo.InvariantCulture))
+            quantityList = csvData
+                .Select(c => decimal.Parse(c[quantityIndex], CultureInfo.InvariantCulture))
                 .ToArray();
         }
         catch (Exception e) {
@@ -41,8 +54,8 @@ class Program
         Console.WriteLine("Quantity statistics:");
         Program.Output(quantityList);
 
-        var perfTime = perfStopWatch.Elapsed.TotalSeconds;
-        Console.WriteLine($"Execution time = {perfTime:F3}s");
+        var perfTime = perfStopWatch.Elapsed.TotalMilliseconds;
+        Console.WriteLine($"Execution time = {perfTime:F2} ms");
     }
 
     static void Output(decimal[] array)

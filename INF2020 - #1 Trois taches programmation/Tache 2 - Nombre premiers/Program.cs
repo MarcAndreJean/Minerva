@@ -25,7 +25,7 @@ class Program
             return;
         }
 
-        // Start measuring time (performance counter).
+        // Start measuring time.
         var perfStopWatch = Stopwatch.StartNew();
 
         var isPrimeList = Enumerable.Repeat(true, n + 1).ToArray();
@@ -49,7 +49,7 @@ class Program
         Console.WriteLine($"Prime numbers up to {n}:");
         Console.WriteLine(string.Join(", ", primes));
 
-        var perfTime = perfStopWatch.Elapsed.TotalSeconds;
-        Console.WriteLine($"Execution time = {perfTime:F3}s");
+        var perfTime = perfStopWatch.Elapsed.TotalMilliseconds;
+        Console.WriteLine($"Execution time = {perfTime:F2} ms");
     }
 }

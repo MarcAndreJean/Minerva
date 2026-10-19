@@ -11,6 +11,7 @@ import csv
 import statistics
 import sys
 import time
+from decimal import Decimal, InvalidOperation
 
 PRICE_COLUMN = "price"
 QUANTITY_COLUMN = "quantity"
@@ -22,8 +23,8 @@ def main(csv_path) -> None:
     Args:
         csv_path: CSV filepath with columns "price" and "quantity".
     """
-    # Start measuring time (performance counter).
-    perf_start_time = time.perf_counter() 
+    # Start measuring time.
+    perf_start_time = time.perf_counter()
 
     # Load data from CSV file.
     price_list = []
@@ -32,24 +33,24 @@ def main(csv_path) -> None:
         with open(csv_path, encoding="utf-8") as file:
             csv_data = csv.DictReader(file)
             for line in csv_data:
-                price_list.append(float(line[PRICE_COLUMN]))
+                price_list.append(Decimal(line[PRICE_COLUMN]))
                 quantity_list.append(int(line[QUANTITY_COLUMN]))
-    except (KeyError, ValueError) as e:
+    except (KeyError, ValueError, InvalidOperation) as e:
         print(f"Error while parsing file '{csv_path}': {e}")
         return
 
     # Print statistics for price and quantity.
     print("Price statistics:")
-    printStatsFromList(price_list)
+    print_stats_from_list(price_list)
 
     print("Quantity statistics:")
-    printStatsFromList(quantity_list)
+    print_stats_from_list(quantity_list)
 
-    perf_time = time.perf_counter() - perf_start_time
-    print(f"Execution time = {perf_time:.3f}s")
+    perf_time = (time.perf_counter() - perf_start_time) * 1000
+    print(f"Execution time = {perf_time:.2f} ms")
 
 
-def printStatsFromList(list) -> None:
+def print_stats_from_list(list) -> None:
     """Print statistics (mean, median, min, max) from a list of values.
 
     Args:
