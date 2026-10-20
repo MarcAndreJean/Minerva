@@ -1,0 +1,9 @@
+# .NET
+bin/
+obj/
+.vs/
+
+# Python
+__pycache__/
+*.pyc
+.ruff_cache/

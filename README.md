@@ -27,6 +27,12 @@ Travaux académiques, classés par sigle de cours puis par numéro de travail.
 | --- | --- | --- |
 | [INF2007 - #1 Test unitaires](INF2007%20-%20%231%20Test%20unitaires/) | Go | [Télécharger](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2FINF2007%2520-%2520%25231%2520Test%2520unitaires) |
 
+### INF 2020 — Programmation d'applications avec Python : des jeux au Web
+
+| Travail | Outils | |
+| --- | --- | --- |
+| [INF2020 - #1 Trois taches programmation](INF2020%20-%20%231%20Trois%20taches%20programmation/) | Python, C# | [Télécharger](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FMarcAndreJean%2Fminerva%2Ftree%2Fmain%2FINF2020%2520-%2520%25231%2520Trois%2520taches%2520programmation) |
+
 ### SCI 1018 — Statistiques avec R
 
 | Travail | Outils | |
